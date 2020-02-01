@@ -52,7 +52,11 @@ body {
   margin-bottom: 100px;
 }
 
-active {
+.layout {
+  margin: 0;
+}
+
+.active {
   color: #f66;
 }
 .md-toolbar.fixed-toolbar {
