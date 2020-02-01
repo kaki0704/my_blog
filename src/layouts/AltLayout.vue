@@ -70,6 +70,7 @@ body {
   padding-top: 100px;
   padding-left: 20px;
   padding-right: 20px;
+  align-items: center;
 }
 
 .md-accent {
