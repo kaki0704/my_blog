@@ -38,7 +38,6 @@ export default {
 }
 </script>
 
-<style src="vue-material/dist/vue-material.css"></style>
 <style>
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
