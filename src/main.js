@@ -3,7 +3,9 @@
 
 import AltLayout from '~/layouts/AltLayout.vue';
 import VueDisqus from 'vue-disqus';
+import Vue from 'vue'
 import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
 
 export default function (Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: "en" }

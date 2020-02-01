@@ -29,7 +29,6 @@ query {
 </static-query>
 
 <script>
-import 'vue-material/dist/vue-material.min.css'
 import Footer from '~/components/Footer.vue'
 export default {
   components: {
