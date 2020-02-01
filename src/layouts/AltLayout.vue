@@ -66,6 +66,7 @@ body {
 
 .slot {
   max-width: 760px;
+  margin: 0 auto;
   padding-top: 100px;
   padding-left: 20px;
   padding-right: 20px;
