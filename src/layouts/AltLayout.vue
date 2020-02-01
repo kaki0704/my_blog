@@ -58,8 +58,6 @@ active {
 .md-toolbar.fixed-toolbar {
   background: #2c2c2c;
   position: fixed;
-  top: 0;
-  z-index: 5;
 }
 
 .slot {
