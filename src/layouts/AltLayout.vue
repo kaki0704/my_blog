@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <md-toolbar class="fixed-toolbar" elevation="5">
       <h3 class="md-title" style="flex: 1">
@@ -12,7 +11,7 @@
       <g-link class="nav__link" exact to="/"><md-button class="md-accent">Home</md-button></g-link>
       <g-link class="nav__link" to="/about"><md-button class="md-accent">About</md-button></g-link>
       <g-link class="nav__link" to="/blog"><md-button class="md-accent">Blog</md-button></g-link>
-      <g-link class="nav__link" to="/products"><md-button class="md-accent">Product</md-button></g-link>
+      <!-- <g-link class="nav__link" to="/products">PRODUCT</g-link> -->
     </md-toolbar>
     <div class="slot">
       <slot/>
