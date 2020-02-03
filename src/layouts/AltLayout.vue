@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-toolbar class="md-medium fixed-toolbar" elevation="5">
+    <md-toolbar class="md-dense fixed-toolbar" elevation="5">
       <md-button @click="showNavigation = true">
         <md-icon class="fa fa-bars"></md-icon>
       </md-button>
