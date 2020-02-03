@@ -2,7 +2,6 @@
   <Layout>
     <h1>Blog</h1>
     <article v-for="edge in $page.allPost.edges" :key="edge.node.id" style="margin-bottom: 2em;">
-      <!-- <div v-html="edge.node.content"/> -->
       <md-card>
         <md-card-media>
           <md-ripple>
