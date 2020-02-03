@@ -1,20 +1,42 @@
 <template>
   <div>
     <md-toolbar class="fixed-toolbar" elevation="5">
-      <div class="md-toolbar md-title" style="flex: 1">
-        <g-link exact to="/">
-          <md-button class="md-primary">
-            {{ $static.metaData.siteName }}
-          </md-button>
-        </g-link>
+      <md-button @click="showNavigation = true">
+        <md-icon class="fa fa-bars"></md-icon>
+      </md-button>
+      <g-link exact to="/">
+        <md-button class="md-title md-primary" style="flex: 1">
+          {{ $static.metaData.siteName }}
+        </md-button>
+      </g-link>
+      <div class="md-toolbar-section-end">
+        <a :href="twitter_href"><md-icon class="fa fa-twitter"></md-icon></a>
+        <a :href="github_href"><md-icon class="fa fa-github"></md-icon></a>
       </div>
-      <g-link class="nav__link" exact to="/"><md-button class="md-accent">Home</md-button></g-link>
-      <g-link class="nav__link" to="/about"><md-button class="md-accent">About</md-button></g-link>
-      <g-link class="nav__link" to="/blog"><md-button class="md-accent">Blog</md-button></g-link>
-      <a :href="twitter_href"><md-icon class="fa fa-twitter"></md-icon></a>
-      <a :href="github_href"><md-icon class="fa fa-github"></md-icon></a>
       <!-- <g-link class="nav__link" to="/products">PRODUCT</g-link> -->
     </md-toolbar>
+    <md-drawer :md-active.sync="showNavigation" md-swipeable>
+      <md-toolbar class="md-transparent" md-elevation="0">
+        <span class="md-title md-accent">My App name</span>
+      </md-toolbar>
+
+      <md-list>
+        <md-list-item>
+          <md-icon class="fa fa-home"></md-icon>
+          <span class="md-list-item-text md-accent"><g-link class="nav__link" exact to="/">Home</g-link></span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon class="fa fa-address-book"></md-icon>
+          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/about">About</g-link></span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon class="fa fa-book"></md-icon>
+          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/blog">Blog</g-link></span>
+        </md-list-item>
+      </md-list>
+    </md-drawer>
     <div class="slot">
       <slot/>
     </div>
@@ -35,7 +57,9 @@ import Footer from '~/components/Footer.vue'
 export default {
   data: () =>({
     twitter_href: 'https://twitter.com/kaki_0704',
-    github_href: 'https://github.com/yamady0704'
+    github_href: 'https://github.com/yamady0704',
+    showNavigation: false,
+    showSidepanel: false
   }),
   components: {
     Footer
@@ -62,7 +86,7 @@ body {
 }
 
 .active {
-  color: #f66;
+  color: #fff;
 }
 .md-toolbar.fixed-toolbar {
   background: #2c2c2c;
@@ -87,12 +111,27 @@ body {
 }
 
 .nav__link {
-  margin-left: 20px;
+  color: #fff
 }
 
 i.md-icon {
   color: #fff;
-  padding-left: 25px;
-  padding-right: 40px;
+}
+
+.md-drawer.md-theme-default {
+  background-color:#2c2c2c;
+  width: 300px;
+}
+
+.md-toolbar.md-transparent {
+  background-color: #202020;
+}
+
+.md-list-item-content{
+  margin-top: 20px;
+}
+
+a {
+  margin-right: 30px;
 }
 </style>
