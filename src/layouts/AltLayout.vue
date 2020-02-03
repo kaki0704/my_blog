@@ -1,19 +1,16 @@
 <template>
   <div>
-    <md-toolbar class="md-dense fixed-toolbar" elevation="5">
-      <md-button @click="showNavigation = true">
-        <md-icon class="fa fa-bars"></md-icon>
-      </md-button>
+    <md-toolbar class="fixed-toolbar" elevation="5">
+      <small>
+        <md-button class="md-icon-button" @click="showNavigation = true">
+          <md-icon class="fa fa-bars"></md-icon>
+        </md-button>
+      </small>
       <g-link exact to="/">
-        <md-button class="md-title md-primary" style="flex: 1">
+        <md-button class="md-title md-accent">
           {{ $static.metaData.siteName }}
         </md-button>
       </g-link>
-      <div class="md-toolbar-section-end">
-        <a class="link" :href="twitter_href"><md-icon class="fa fa-twitter"></md-icon></a>
-        <a class="link" :href="github_href"><md-icon class="fa fa-github"></md-icon></a>
-      </div>
-      <!-- <g-link class="nav__link" to="/products">PRODUCT</g-link> -->
     </md-toolbar>
     <md-drawer :md-active.sync="showNavigation" md-swipeable>
       <md-toolbar class="md-transparent" md-elevation="0">
@@ -25,15 +22,21 @@
           <md-icon class="fa fa-home"></md-icon>
           <span class="md-list-item-text md-accent"><g-link class="nav__link" exact to="/">Home</g-link></span>
         </md-list-item>
-
         <md-list-item>
           <md-icon class="fa fa-address-book"></md-icon>
           <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/about">About</g-link></span>
         </md-list-item>
-
         <md-list-item>
           <md-icon class="fa fa-book"></md-icon>
           <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/blog">Blog</g-link></span>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="fa fa-twitter"></md-icon>
+          <span class="md-list-item-text md-accent"><a class="nav__link" :href="twitter_href">Twitter</a></span>
+        </md-list-item>
+        <md-list-item>
+          <md-icon class="fa fa-github"></md-icon>
+          <span class="md-list-item-text md-accent"><a class="nav__link" :href="github_href">Github</a></span>
         </md-list-item>
       </md-list>
     </md-drawer>
@@ -85,6 +88,10 @@ body {
   margin: 0;
 }
 
+.md-title {
+  padding-left: 20px;
+}
+
 .active {
   color: #fff;
 }
@@ -121,6 +128,7 @@ i.md-icon {
 .md-drawer.md-theme-default {
   background-color:#2c2c2c;
   width: 300px;
+  position: fixed;
 }
 
 .md-toolbar.md-transparent {

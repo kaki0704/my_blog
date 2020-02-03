@@ -17,10 +17,6 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   })
-  head.link.push({
-    rel: 'stylesheet',
-    href: "dist/vue-material-components.min.js"
-  })
   // Set default layout as a global component
   Vue.component('Layout', AltLayout)
   Vue.use(VueDisqus)
