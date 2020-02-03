@@ -1,16 +1,18 @@
 <template>
   <div>
     <md-toolbar class="fixed-toolbar" elevation="5">
-      <h3 class="md-title" style="flex: 1">
+      <div class="md-toolbar md-title" style="flex: 1">
         <g-link exact to="/">
           <md-button class="md-primary">
             {{ $static.metaData.siteName }}
           </md-button>
         </g-link>
-      </h3>
+      </div>
       <g-link class="nav__link" exact to="/"><md-button class="md-accent">Home</md-button></g-link>
       <g-link class="nav__link" to="/about"><md-button class="md-accent">About</md-button></g-link>
       <g-link class="nav__link" to="/blog"><md-button class="md-accent">Blog</md-button></g-link>
+      <a :href="twitter_href"><md-icon class="fa fa-twitter"></md-icon></a>
+      <a :href="github_href"><md-icon class="fa fa-github"></md-icon></a>
       <!-- <g-link class="nav__link" to="/products">PRODUCT</g-link> -->
     </md-toolbar>
     <div class="slot">
@@ -31,6 +33,10 @@ query {
 <script>
 import Footer from '~/components/Footer.vue'
 export default {
+  data: () =>({
+    twitter_href: 'https://twitter.com/kaki_0704',
+    github_href: 'https://github.com/yamady0704'
+  }),
   components: {
     Footer
   },
@@ -82,5 +88,11 @@ body {
 
 .nav__link {
   margin-left: 20px;
+}
+
+i.md-icon {
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 40px;
 }
 </style>
