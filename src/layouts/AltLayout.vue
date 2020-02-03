@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-toolbar class="fixed-toolbar" elevation="5">
+    <md-toolbar class="md-medium fixed-toolbar" elevation="5">
       <md-button @click="showNavigation = true">
         <md-icon class="fa fa-bars"></md-icon>
       </md-button>
@@ -10,8 +10,8 @@
         </md-button>
       </g-link>
       <div class="md-toolbar-section-end">
-        <a :href="twitter_href"><md-icon class="fa fa-twitter"></md-icon></a>
-        <a :href="github_href"><md-icon class="fa fa-github"></md-icon></a>
+        <a class="link" :href="twitter_href"><md-icon class="fa fa-twitter"></md-icon></a>
+        <a class="link" :href="github_href"><md-icon class="fa fa-github"></md-icon></a>
       </div>
       <!-- <g-link class="nav__link" to="/products">PRODUCT</g-link> -->
     </md-toolbar>
@@ -131,7 +131,7 @@ i.md-icon {
   margin-top: 20px;
 }
 
-a {
+a.link {
   margin-right: 30px;
 }
 </style>

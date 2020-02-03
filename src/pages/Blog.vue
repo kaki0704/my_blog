@@ -51,7 +51,7 @@ query ($page: Int) {
         }
         timeToRead
         path
-        cover_image (width: 600, height: 250, quality: 100, blur: 10)
+        cover_image (width: 500, height: 250, quality: 100, blur: 10)
       }
     }
   }
