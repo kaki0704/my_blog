@@ -28,5 +28,12 @@ module.exports = {
   ],
   templates: {
     BlogPost: "/posts/:id"
+  },
+  transformers: {
+    remark: {
+      plugins: [
+        '@gridsome/remark-prismjs'
+      ]
+    }
   }
 };

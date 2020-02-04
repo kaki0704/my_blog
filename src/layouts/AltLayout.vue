@@ -143,4 +143,8 @@ i.md-icon {
 a.link {
   margin-right: 30px;
 }
+
+code {
+  background-color: #2c2c2c;
+}
 </style>
