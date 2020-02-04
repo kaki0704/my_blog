@@ -1,5 +1,5 @@
 ---
-title: ko
+title: ブログ完成しました！
 except: "teest"
 date: 2020-02-04
 tags: ['技術', 'その他']

@@ -20,7 +20,7 @@
           {{edge.node.except}}
         </md-card-content>
         <md-card-actions>
-          <g-link :to="edge.node.path"><md-button>Read Post >></md-button></g-link>
+          <g-link :to="edge.node.path"><md-button>記事を読む >></md-button></g-link>
         </md-card-actions>
         <md-card-actions>
           <g-link style="padding-right: .25em" v-for="tag in edge.node.tags" :to="tag.path" :key="tag.id"><md-button class="md-raised" :md-ripple="false">{{tag.id}}</md-button></g-link>
@@ -51,7 +51,7 @@ query ($page: Int) {
         }
         timeToRead
         path
-        cover_image (width: 500, height: 250, quality: 100, blur: 10)
+        cover_image (width: 500, height: 180, quality: 100, blur: 10)
       }
     }
   }

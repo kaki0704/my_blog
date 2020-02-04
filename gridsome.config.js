@@ -14,7 +14,7 @@ module.exports = {
       options: {
         typeName: "Post",
         path: "./content/posts/**/*.md",
-        route: "/posts/:slug",
+        route: "/posts/:id",
         refs: {
           // Create a Tag content type and its nodes automatically.
           tags: {
@@ -27,6 +27,6 @@ module.exports = {
     }
   ],
   templates: {
-    BlogPost: "/posts/:slug"
+    BlogPost: "/posts/:id"
   }
 };
