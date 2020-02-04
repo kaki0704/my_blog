@@ -5,7 +5,8 @@ import AltLayout from '~/layouts/AltLayout.vue';
 import VueDisqus from 'vue-disqus';
 import Vue from 'vue'
 import VueMaterial from 'vue-material'
-import 'prismjs/themes/prism.css'
+require('gridsome-plugin-remark-prismjs-all/themes/night-owl.css');
+require('gridsome-plugin-remark-prismjs-all/themes/tomorrow.css');
 
 export default function (Vue, { router, head, isClient }) {
   head.htmlAttrs = { lang: "en" }
