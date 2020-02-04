@@ -2,7 +2,7 @@
   <Layout :showFooter="true">
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/assets/images/favicon.png" height="200" width="200" />
+    <g-image alt="Example image" src="~/assets/images/top_image.jpeg" height="800" width="1800" />
 
     <h1>Hello, world!</h1>
 

@@ -20,15 +20,15 @@
       <md-list>
         <md-list-item>
           <md-icon class="fa fa-home"></md-icon>
-          <span class="md-list-item-text md-accent"><g-link class="nav__link" exact to="/">Home</g-link></span>
+          <span class="md-list-item-text md-accent"><g-link class="nav__link" exact to="/">ホーム</g-link></span>
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-address-book"></md-icon>
-          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/about">About</g-link></span>
+          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/about">サイトについて</g-link></span>
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-book"></md-icon>
-          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/blog">Blog</g-link></span>
+          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/blog">ブログ</g-link></span>
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-twitter"></md-icon>
@@ -90,6 +90,7 @@ body {
 
 .md-title {
   padding-left: 20px;
+  font-weight: bold;
 }
 
 .active {
