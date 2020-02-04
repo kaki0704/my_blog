@@ -7,7 +7,7 @@
 module.exports = {
   siteName: "Everything Thriving",
   siteDescription:
-    "Your one-stop shop for finding all manner of stylish luxury apparel and accessories",
+    "岐阜に住んでいる会社員がプログラミングなどについて発信していくサイトです。",
   plugins: [
     {
       use: "@gridsome/source-filesystem",

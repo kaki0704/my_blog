@@ -9,7 +9,7 @@ require('gridsome-plugin-remark-prismjs-all/themes/night-owl.css');
 require('gridsome-plugin-remark-prismjs-all/themes/tomorrow.css');
 
 export default function (Vue, { router, head, isClient }) {
-  head.htmlAttrs = { lang: "en" }
+  head.htmlAttrs = { lang: "ja" }
   head.bodyAttrs = { class: "body" }
   head.link.push({
     rel: 'stylesheet',

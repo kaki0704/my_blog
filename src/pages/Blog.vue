@@ -1,33 +1,49 @@
 <template>
   <Layout>
     <h1>Blog</h1>
-    <article v-for="edge in $page.allPost.edges" :key="edge.node.id" style="margin-bottom: 2em;">
+    <article
+      v-for="edge in $page.allPost.edges"
+      :key="edge.node.id"
+      style="margin-bottom: 2em;"
+    >
       <md-card>
         <md-card-media>
           <md-ripple>
-            <g-image :src="edge.node.cover_image" style="width: 100%"/>
+            <g-image :src="edge.node.cover_image" style="width: 100%" />
           </md-ripple>
         </md-card-media>
         <md-card-header>
           <div class="md-title">
-            {{edge.node.title}}
+            {{ edge.node.title }}
           </div>
           <div class="md-subhead">
-            <p>Posted {{edge.node.date}} ・ {{edge.node.timeToRead}} min read</p>
+            <p>
+              Posted {{ edge.node.date }} ・ {{ edge.node.timeToRead }} min read
+            </p>
           </div>
         </md-card-header>
         <md-card-content>
-          {{edge.node.except}}
+          {{ edge.node.except }}
         </md-card-content>
         <md-card-actions>
-          <g-link :to="edge.node.path"><md-button>記事を読む >></md-button></g-link>
+          <g-link :to="edge.node.path"
+            ><md-button>記事を読む >></md-button></g-link
+          >
         </md-card-actions>
         <md-card-actions>
-          <g-link style="padding-right: .25em" v-for="tag in edge.node.tags" :to="tag.path" :key="tag.id"><md-button class="md-raised" :md-ripple="false">{{tag.id}}</md-button></g-link>
+          <g-link
+            style="padding-right: .25em"
+            v-for="tag in edge.node.tags"
+            :to="tag.path"
+            :key="tag.id"
+            ><md-button class="md-raised" :md-ripple="false">{{
+              tag.id
+            }}</md-button></g-link
+          >
         </md-card-actions>
       </md-card>
     </article>
-    <Pager :info="$page.allPost.pageInfo" linkClass="pager"/>
+    <Pager :info="$page.allPost.pageInfo" linkClass="pager" />
   </Layout>
 </template>
 
@@ -59,12 +75,12 @@ query ($page: Int) {
 </page-query>
 
 <script>
-import { Pager } from 'gridsome'
+import { Pager } from "gridsome";
 
 export default {
   components: { Pager },
-  name: 'SingleChip'
-}
+  name: "SingleChip"
+};
 </script>
 
 <style>

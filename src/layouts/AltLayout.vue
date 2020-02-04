@@ -20,28 +20,38 @@
       <md-list>
         <md-list-item>
           <md-icon class="fa fa-home"></md-icon>
-          <span class="md-list-item-text md-accent"><g-link class="nav__link" exact to="/">ホーム</g-link></span>
+          <span class="md-list-item-text md-accent"
+            ><g-link class="nav__link" exact to="/">ホーム</g-link></span
+          >
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-address-book"></md-icon>
-          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/about">サイトについて</g-link></span>
+          <span class="md-list-item-text md-accent"
+            ><g-link class="nav__link" to="/about">サイトについて</g-link></span
+          >
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-book"></md-icon>
-          <span class="md-list-item-text md-accent"><g-link class="nav__link" to="/blog">ブログ</g-link></span>
+          <span class="md-list-item-text md-accent"
+            ><g-link class="nav__link" to="/blog">ブログ</g-link></span
+          >
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-twitter"></md-icon>
-          <span class="md-list-item-text md-accent"><a class="nav__link" :href="twitter_href">Twitter</a></span>
+          <span class="md-list-item-text md-accent"
+            ><a class="nav__link" :href="twitter_href">Twitter</a></span
+          >
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-github"></md-icon>
-          <span class="md-list-item-text md-accent"><a class="nav__link" :href="github_href">Github</a></span>
+          <span class="md-list-item-text md-accent"
+            ><a class="nav__link" :href="github_href">Github</a></span
+          >
         </md-list-item>
       </md-list>
     </md-drawer>
     <div class="slot">
-      <slot/>
+      <slot />
     </div>
     <Footer v-if="showFooter"></Footer>
   </div>
@@ -56,31 +66,32 @@ query {
 </static-query>
 
 <script>
-import Footer from '~/components/Footer.vue'
+import Footer from "~/components/Footer.vue";
 export default {
-  data: () =>({
-    twitter_href: 'https://twitter.com/kaki_0704',
-    github_href: 'https://github.com/yamady0704',
+  data: () => ({
+    twitter_href: "https://twitter.com/kaki_0704",
+    github_href: "https://github.com/yamady0704",
     showNavigation: false,
     showSidepanel: false
   }),
   components: {
     Footer
   },
-  props: ['showFooter']
-}
+  props: ["showFooter"]
+};
 </script>
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
 }
 
 .body {
-  background: #EEEEEE;
+  background: #eeeeee;
   margin-bottom: 100px;
 }
 
@@ -119,7 +130,7 @@ body {
 }
 
 .nav__link {
-  color: #fff
+  color: #fff;
 }
 
 i.md-icon {
@@ -127,7 +138,7 @@ i.md-icon {
 }
 
 .md-drawer.md-theme-default {
-  background-color:#2c2c2c;
+  background-color: #2c2c2c;
   width: 300px;
   position: fixed;
 }
@@ -136,7 +147,7 @@ i.md-icon {
   background-color: #202020;
 }
 
-.md-list-item-content{
+.md-list-item-content {
   margin-top: 20px;
 }
 
