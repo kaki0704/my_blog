@@ -33,7 +33,7 @@
 
 <page-query>
 query ($page: Int) {
-  allPost(perPage: 2, page: $page) @paginate {
+  allPost(perPage: 5, page: $page) @paginate {
     pageInfo{
       totalPages
       currentPage
@@ -51,7 +51,7 @@ query ($page: Int) {
         }
         timeToRead
         path
-        cover_image (width: 500, height: 180, quality: 100, blur: 10)
+        cover_image (width: 1000, height: 300, quality: 100, blur: 5)
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>#{{$page.tag.title}}</h1>
+    <h1>タグ: {{$page.tag.title}}</h1>
     <article v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" style="margin-bottom: 2em;">
       <md-card>
         <md-card-media>
