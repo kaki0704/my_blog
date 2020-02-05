@@ -1,5 +1,5 @@
 <template>
-  <footer>Copyright {{getCurrentYear}} by <a :href="href">CordArtisy</a></footer>
+  <footer>Copyright {{getCurrentYear}} by @yamady0704</footer>
 </template>
 
 <script>
@@ -18,8 +18,10 @@ export default {
 <style>
   footer {
     text-align: center;
-    color: #00a672;
+    color: #fff;
     letter-spacing: 0.5px;
-    padding: 20px;
+    padding: 25px;
+    background-color: #2c2c2c;
+    margin-top: 5%;
   }
 </style>

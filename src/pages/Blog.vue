@@ -43,7 +43,9 @@
         </md-card-actions>
       </md-card>
     </article>
-    <Pager :info="$page.allPost.pageInfo" linkClass="pager" />
+    <div class="pager">
+      <Pager :info="$page.allPost.pageInfo" linkClass="pager" />
+    </div>
   </Layout>
 </template>
 
@@ -90,5 +92,7 @@ export default {
   color: black;
   padding: 8px 16px;
   float: left;
+  margin-bottom: 20px;
 }
+
 </style>

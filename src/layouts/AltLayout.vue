@@ -92,11 +92,6 @@ body {
 
 .body {
   background: #eeeeee;
-  margin-bottom: 100px;
-}
-
-.layout {
-  margin: 0;
 }
 
 .md-title {
@@ -139,7 +134,7 @@ i.md-icon {
 
 .md-drawer.md-theme-default {
   background-color: #2c2c2c;
-  width: 300px;
+  width: 250px;
   position: fixed;
 }
 
