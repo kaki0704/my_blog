@@ -5,6 +5,7 @@ import AltLayout from '~/layouts/AltLayout.vue';
 import VueDisqus from 'vue-disqus';
 import Vue from 'vue'
 import VueMaterial from 'vue-material'
+import VueCarousel from 'vue-carousel';
 require('gridsome-plugin-remark-prismjs-all/themes/night-owl.css');
 require('gridsome-plugin-remark-prismjs-all/themes/tomorrow.css');
 
@@ -23,4 +24,5 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', AltLayout)
   Vue.use(VueDisqus)
   Vue.use(VueMaterial)
+  Vue.use(VueCarousel);
 }

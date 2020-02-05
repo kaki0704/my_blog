@@ -24,6 +24,55 @@
       amet..", comes from a line in section 1.10.32.
     </p>
 
+    <carousel
+      :per-page="1"
+      :navigate-to="someLocalProperty"
+      :mouse-drag="false"
+      :navigationEnabled="true"
+      :loop="true"
+    >
+      <slide>
+        <g-image
+          alt="Example image"
+          src="~/assets/images/1.jpg"
+          height="800"
+          width="1800"
+        />
+      </slide>
+      <slide>
+        <g-image
+          alt="Example image"
+          src="~/assets/images/2.jpg"
+          height="800"
+          width="1800"
+        />
+      </slide>
+      <slide>
+        <g-image
+          alt="Example image"
+          src="~/assets/images/3.jpg"
+          height="800"
+          width="1800"
+        />
+      </slide>
+      <slide>
+        <g-image
+          alt="Example image"
+          src="~/assets/images/4.jpg"
+          height="800"
+          width="1800"
+        />
+      </slide>
+      <slide>
+        <g-image
+          alt="Example image"
+          src="~/assets/images/5.jpg"
+          height="800"
+          width="1800"
+        />
+      </slide>
+    </carousel>
+
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener"
         >Gridsome Docs</a
@@ -41,12 +90,15 @@
 
 <script>
 import Footer from "~/components/Footer.vue";
+import { Carousel, Slide } from "vue-carousel";
 export default {
   metaInfo: {
     title: "Hello, world!"
   },
   components: {
-    Footer
+    Footer,
+    Carousel,
+    Slide
   }
 };
 </script>
@@ -54,5 +106,9 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+
+.VueCarousel-dot {
+  background-color:darkgray;
 }
 </style>
