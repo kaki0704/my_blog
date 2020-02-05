@@ -23,55 +23,56 @@
       Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
       amet..", comes from a line in section 1.10.32.
     </p>
-
-    <carousel
-      :per-page="1"
-      :navigate-to="someLocalProperty"
-      :mouse-drag="false"
-      :navigationEnabled="true"
-      :loop="true"
-    >
-      <slide>
-        <g-image
-          alt="Example image"
-          src="~/assets/images/1.jpg"
-          height="800"
-          width="1800"
-        />
-      </slide>
-      <slide>
-        <g-image
-          alt="Example image"
-          src="~/assets/images/2.jpg"
-          height="800"
-          width="1800"
-        />
-      </slide>
-      <slide>
-        <g-image
-          alt="Example image"
-          src="~/assets/images/3.jpg"
-          height="800"
-          width="1800"
-        />
-      </slide>
-      <slide>
-        <g-image
-          alt="Example image"
-          src="~/assets/images/4.jpg"
-          height="800"
-          width="1800"
-        />
-      </slide>
-      <slide>
-        <g-image
-          alt="Example image"
-          src="~/assets/images/5.jpg"
-          height="800"
-          width="1800"
-        />
-      </slide>
-    </carousel>
+    <ClientOnly>
+      <carousel
+        :per-page="1"
+        :navigate-to="someLocalProperty"
+        :mouse-drag="false"
+        :navigationEnabled="true"
+        :loop="true"
+      >
+        <slide>
+          <g-image
+            alt="Example image"
+            src="~/assets/images/1.jpg"
+            height="800"
+            width="1800"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="Example image"
+            src="~/assets/images/2.jpg"
+            height="800"
+            width="1800"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="Example image"
+            src="~/assets/images/3.jpg"
+            height="800"
+            width="1800"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="Example image"
+            src="~/assets/images/4.jpg"
+            height="800"
+            width="1800"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="Example image"
+            src="~/assets/images/5.jpg"
+            height="800"
+            width="1800"
+          />
+        </slide>
+      </carousel>
+    </ClientOnly>
 
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener"
@@ -89,9 +90,6 @@
 </template>
 
 <script>
-if (process.browser) {
-  import { Carousel, Slide } from "vue-carousel";
-}
 import Footer from "~/components/Footer.vue";
 export default {
   metaInfo: {
@@ -99,9 +97,16 @@ export default {
   },
   components: {
     Footer,
-    Carousel,
-    Slide
-  }
+    Carousel: () =>
+      import ('vue-carousel')
+      .then(m => m.Carousel)
+      .catch(),
+    Slide: () =>
+      import ('vue-carousel')
+      .then(m => m.Slide)
+      .catch()
+  },
+  name: 'Index'
 };
 </script>
 

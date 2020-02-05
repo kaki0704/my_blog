@@ -40,8 +40,5 @@ module.exports = {
         'gridsome-plugin-remark-prismjs-all',
       ]
     }
-  },
-  build: {
-  vendor: ['vue-carousel']
   }
 };
