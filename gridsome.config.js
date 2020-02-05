@@ -25,8 +25,7 @@ module.exports = {
           }
         }
       }
-    },
-    { src: 'vue-carousel', ssr: false }
+    }
   ],
   templates: {
     BlogPost: "/posts/:id"
