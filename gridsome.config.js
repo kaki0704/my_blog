@@ -42,6 +42,6 @@ module.exports = {
     }
   },
   build: {
-  vendor: ['外部ライブラリのパス']
+  vendor: ['vue-carousel']
   }
 };
