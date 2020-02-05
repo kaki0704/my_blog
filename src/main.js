@@ -23,5 +23,4 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', AltLayout)
   Vue.use(VueDisqus)
   Vue.use(VueMaterial)
-  Vue.use(VueCarousel);
 }
