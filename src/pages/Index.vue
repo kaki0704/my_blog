@@ -98,11 +98,11 @@ export default {
   components: {
     Footer,
     Carousel: () =>
-      import ('vue-carousel/src/index')
+      import ('vue-carousel')
       .then(m => m.Carousel)
       .catch(),
     Slide: () =>
-      import ('vue-carousel/src/index')
+      import ('vue-carousel')
       .then(m => m.Slide)
       .catch()
   },

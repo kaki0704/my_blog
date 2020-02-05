@@ -5,7 +5,7 @@ import AltLayout from '~/layouts/AltLayout.vue';
 import VueDisqus from 'vue-disqus';
 import Vue from 'vue'
 import VueMaterial from 'vue-material'
-import VueCarousel from 'vue-carousel/src/index';
+import VueCarousel from 'vue-carousel';
 require('gridsome-plugin-remark-prismjs-all/themes/night-owl.css');
 require('gridsome-plugin-remark-prismjs-all/themes/tomorrow.css');
 
