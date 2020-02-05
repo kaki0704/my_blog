@@ -40,5 +40,8 @@ module.exports = {
         'gridsome-plugin-remark-prismjs-all',
       ]
     }
+  },
+  build: {
+  vendor: ['外部ライブラリのパス']
   }
 };

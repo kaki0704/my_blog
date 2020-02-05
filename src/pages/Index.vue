@@ -89,8 +89,10 @@
 </template>
 
 <script>
+if (process.browser) {
+  import { Carousel, Slide } from "vue-carousel";
+}
 import Footer from "~/components/Footer.vue";
-import { Carousel, Slide } from "vue-carousel";
 export default {
   metaInfo: {
     title: "Hello, world!"
