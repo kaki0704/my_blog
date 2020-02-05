@@ -39,13 +39,13 @@
         <md-list-item>
           <md-icon class="fa fa-twitter"></md-icon>
           <span class="md-list-item-text md-accent"
-            ><a class="nav__link" :href="twitter_href">Twitter</a></span
+            ><a class="nav__link" :href="twitter_href" target="_blank">Twitter</a></span
           >
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-github"></md-icon>
           <span class="md-list-item-text md-accent"
-            ><a class="nav__link" :href="github_href">Github</a></span
+            ><a class="nav__link" :href="github_href" target="_brank">Github</a></span
           >
         </md-list-item>
       </md-list>
