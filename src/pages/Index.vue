@@ -27,13 +27,14 @@
       <carousel
         :per-page="1"
         :navigate-to="someLocalProperty"
-        :mouse-drag="false"
         :navigationEnabled="true"
         :loop="true"
         :autoplay="true"
         :autoplayHoverPause="true"
-        :minSwipeDistance=100
-        :paginationPosition="bottom-overlay"
+        paginationColor="#abb1b5"
+        navigationNextLabel="<md-icon class='fa fa-chevron-circle-right fa-3x'></md-icon>"
+        navigationPrevLabel="<md-icon class='fa fa-chevron-circle-left fa-3x'></md-icon>"
+        :autoplayTimeout="4000"
       >
         <slide>
           <g-image
@@ -77,19 +78,6 @@
         </slide>
       </carousel>
     </ClientOnly>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener"
-        >Gridsome Docs</a
-      >
-      <a
-        href="https://github.com/gridsome/gridsome"
-        target="_blank"
-        rel="noopener"
-        >GitHub</a
-      >
-    </p>
-    <!-- <Footer></Footer> -->
   </Layout>
 </template>
 
@@ -117,5 +105,8 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+.fa {
+  color:gray;
 }
 </style>
