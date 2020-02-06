@@ -62,7 +62,7 @@ query ($page: Int) {
         content
         title
         except
-        date (format: "MMMM Do, YYYY")
+        date (format: "YYYY/MM/DD")
         tags {
           id
           path

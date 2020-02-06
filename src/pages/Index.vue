@@ -27,13 +27,10 @@
       <carousel
         :per-page="1"
         :navigate-to="someLocalProperty"
-        :navigationEnabled="true"
         :loop="true"
         :autoplay="true"
         :autoplayHoverPause="true"
         paginationColor="#abb1b5"
-        navigationNextLabel="<md-icon class='fa fa-chevron-circle-right fa-3x'></md-icon>"
-        navigationPrevLabel="<md-icon class='fa fa-chevron-circle-left fa-3x'></md-icon>"
         :autoplayTimeout="4000"
       >
         <slide>
