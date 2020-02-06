@@ -39,6 +39,7 @@
             src="~/assets/images/1.jpg"
             height="1200"
             width="1800"
+            quality="100"
           />
         </slide>
         <slide>
@@ -47,6 +48,7 @@
             src="~/assets/images/2.jpg"
             height="1200"
             width="1800"
+            quality="100"
           />
         </slide>
         <slide>
@@ -55,6 +57,7 @@
             src="~/assets/images/3.jpg"
             height="1200"
             width="1800"
+            quality="100"
           />
         </slide>
         <slide>
@@ -63,6 +66,7 @@
             src="~/assets/images/4.jpg"
             height="1200"
             width="1800"
+            quality="100"
           />
         </slide>
         <slide>
@@ -72,6 +76,65 @@
             height="1200"
             width="1800"
           />
+        </slide>
+      </carousel>
+    </ClientOnly>
+    <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
+    <ClientOnly>
+      <carousel
+        :per-page="1"
+        :navigate-to="someLocalProperty"
+        :loop="true"
+        :autoplay="true"
+        :autoplayHoverPause="true"
+        paginationColor="#abb1b5"
+        :autoplayTimeout="4000"
+        :adjustableHeight="true"
+      >
+        <slide>
+          <g-image
+            alt="chess"
+            src="~/assets/images/hobby/chess.jpg"
+            height="1200"
+            width="1800"
+            quality="100"
+            class="image"
+          />
+          <p class="md-display-2" style="left: 70%">Chess</p>
+        </slide>
+        <slide class="hobby-slide">
+          <g-image
+            alt="running"
+            src="~/assets/images/hobby/running.jpg"
+            height="1200"
+            width="1800"
+            quality="100"
+            class="image"
+          />
+          <p class="md-display-2" style="left: 68%">Running</p>
+        </slide>
+        <slide>
+          <g-image
+            alt="reading"
+            src="~/assets/images/hobby/reading.jpg"
+            height="1200"
+            width="1800"
+            quality="100"
+            class="image"
+            fit=outside
+          />
+          <p class="md-display-2" style="left: 68%">Reading</p>
+        </slide>
+        <slide>
+          <g-image
+            alt="programming"
+            src="~/assets/images/hobby/programming.jpg"
+            height="1200"
+            width="1800"
+            quality="100"
+            class="image"
+          />
+          <p class="md-display-2">Programming</p>
         </slide>
       </carousel>
     </ClientOnly>
@@ -87,15 +150,15 @@ export default {
   components: {
     Footer,
     Carousel: () =>
-      import ('vue-carousel')
-      .then(m => m.Carousel)
-      .catch(),
+      import("vue-carousel")
+        .then(m => m.Carousel)
+        .catch(),
     Slide: () =>
-      import ('vue-carousel')
-      .then(m => m.Slide)
-      .catch()
+      import("vue-carousel")
+        .then(m => m.Slide)
+        .catch()
   },
-  name: 'Index'
+  name: "Index"
 };
 </script>
 
@@ -104,6 +167,27 @@ export default {
   margin-right: 1rem;
 }
 .fa {
-  color:gray;
+  color: gray;
+}
+
+.VueCarousel-slide {
+  position: relative;
+}
+
+.VueCarousel-slide p {
+  position:absolute;
+  color: white;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  top:70%;
+  left:50%;
+  font-family: 'Noto Sans', sans-serif;
+  opacity: 70%;
+  font-weight: bold;
+}
+
+.VueCarousel-slide image {
+  width: 100%;
 }
 </style>
