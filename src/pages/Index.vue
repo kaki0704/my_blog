@@ -30,12 +30,16 @@
         :mouse-drag="false"
         :navigationEnabled="true"
         :loop="true"
+        :autoplay="true"
+        :autoplayHoverPause="true"
+        :minSwipeDistance=100
+        :paginationPosition="bottom-overlay"
       >
         <slide>
           <g-image
             alt="Example image"
             src="~/assets/images/1.jpg"
-            height="800"
+            height="1200"
             width="1800"
           />
         </slide>
@@ -43,7 +47,7 @@
           <g-image
             alt="Example image"
             src="~/assets/images/2.jpg"
-            height="800"
+            height="1200"
             width="1800"
           />
         </slide>
@@ -51,7 +55,7 @@
           <g-image
             alt="Example image"
             src="~/assets/images/3.jpg"
-            height="800"
+            height="1200"
             width="1800"
           />
         </slide>
@@ -59,7 +63,7 @@
           <g-image
             alt="Example image"
             src="~/assets/images/4.jpg"
-            height="800"
+            height="1200"
             width="1800"
           />
         </slide>
@@ -67,7 +71,7 @@
           <g-image
             alt="Example image"
             src="~/assets/images/5.jpg"
-            height="800"
+            height="1200"
             width="1800"
           />
         </slide>
@@ -113,9 +117,5 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
-}
-
-.VueCarousel-dot {
-  background-color:darkgray;
 }
 </style>
