@@ -111,8 +111,8 @@ body {
   max-width: 760px;
   margin: 0 auto;
   padding-top: 100px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   align-items: center;
 }
 

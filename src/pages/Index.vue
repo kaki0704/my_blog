@@ -26,7 +26,7 @@
     <ClientOnly>
       <carousel
         :per-page="1"
-        :navigate-to=1
+        :navigate-to="1"
         :loop="true"
         :autoplay="true"
         :autoplayHoverPause="true"
@@ -79,11 +79,11 @@
         </slide>
       </carousel>
     </ClientOnly>
-    <h2 class="sub-title md-headline" style="font-weight: bold;">Hobby</h2>
+    <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
     <ClientOnly>
       <carousel
         :per-page="1"
-        :navigate-to=1
+        :navigate-to="1"
         :loop="true"
         :autoplay="true"
         :autoplayHoverPause="true"
@@ -100,7 +100,6 @@
             quality="100"
             class="image"
           />
-          <p class="md-headline">Chess</p>
         </slide>
         <slide class="hobby-slide">
           <g-image
@@ -111,7 +110,6 @@
             quality="100"
             class="image"
           />
-          <p class="md-headline">Running</p>
         </slide>
         <slide>
           <g-image
@@ -121,9 +119,8 @@
             width="1800"
             quality="100"
             class="image"
-            fit=outside
+            fit="outside"
           />
-          <p class="md-headline">Reading</p>
         </slide>
         <slide>
           <g-image
@@ -134,7 +131,6 @@
             quality="100"
             class="image"
           />
-          <p class="md-headline">Programming</p>
         </slide>
       </carousel>
     </ClientOnly>
@@ -170,23 +166,9 @@ export default {
   color: gray;
 }
 
-.VueCarousel-slide {
-  position: relative;
-}
-
-.VueCarousel-slide p {
-  position:absolute;
-  color: whitesmoke;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  top:70%;
-  left:50%;
-  font-family: 'Noto Sans', sans-serif;
-  font-weight: bold;
-}
-
-.VueCarousel-slide image {
-  width: 100%;
+.sub-title {
+  margin-top: 100px;
+  color: gray;
+  text-align:  center;
 }
 </style>
