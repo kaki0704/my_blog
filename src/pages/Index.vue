@@ -100,7 +100,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-1">Chess</p>
+          <p class="md-headline">Chess</p>
         </slide>
         <slide class="hobby-slide">
           <g-image
@@ -111,7 +111,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-1">Running</p>
+          <p class="md-headline">Running</p>
         </slide>
         <slide>
           <g-image
@@ -123,7 +123,7 @@
             class="image"
             fit=outside
           />
-          <p class="md-display-1">Reading</p>
+          <p class="md-headline">Reading</p>
         </slide>
         <slide>
           <g-image
@@ -134,7 +134,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-1">Programming</p>
+          <p class="md-headline">Programming</p>
         </slide>
       </carousel>
     </ClientOnly>
@@ -176,7 +176,7 @@ export default {
 
 .VueCarousel-slide p {
   position:absolute;
-  color: #fff;
+  color: whitesmoke;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
