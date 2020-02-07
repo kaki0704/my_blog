@@ -100,7 +100,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-1" style="left: 70%">Chess</p>
+          <p class="md-display-1">Chess</p>
         </slide>
         <slide class="hobby-slide">
           <g-image
@@ -111,7 +111,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-1" style="left: 68%">Running</p>
+          <p class="md-display-1">Running</p>
         </slide>
         <slide>
           <g-image
@@ -123,7 +123,7 @@
             class="image"
             fit=outside
           />
-          <p class="md-display-1" style="left: 68%">Reading</p>
+          <p class="md-display-1">Reading</p>
         </slide>
         <slide>
           <g-image
@@ -176,9 +176,12 @@ export default {
 
 .VueCarousel-slide p {
   position:absolute;
-  color: white;
-  top:70%;
-  left:50%;
+  color: #dadada;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  top:15%;
+  left:25%;
   font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
 }
