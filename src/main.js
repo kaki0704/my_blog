@@ -21,7 +21,7 @@ export default function (Vue, { router, head, isClient }) {
   })
   head.link.push({
     rel: 'stylesheet',
-    href: "//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"
+    href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic"
   })
   // Set default layout as a global component
   Vue.component('Layout', AltLayout)

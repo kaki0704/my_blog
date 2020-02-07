@@ -26,7 +26,7 @@
     <ClientOnly>
       <carousel
         :per-page="1"
-        :navigate-to="someLocalProperty"
+        :navigate-to=1
         :loop="true"
         :autoplay="true"
         :autoplayHoverPause="true"
@@ -79,11 +79,11 @@
         </slide>
       </carousel>
     </ClientOnly>
-    <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
+    <h2 class="sub-title md-headline" style="font-weight: bold;">Hobby</h2>
     <ClientOnly>
       <carousel
         :per-page="1"
-        :navigate-to="someLocalProperty"
+        :navigate-to=1
         :loop="true"
         :autoplay="true"
         :autoplayHoverPause="true"
@@ -100,7 +100,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-2" style="left: 70%">Chess</p>
+          <p class="md-display-1" style="left: 70%">Chess</p>
         </slide>
         <slide class="hobby-slide">
           <g-image
@@ -111,7 +111,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-2" style="left: 68%">Running</p>
+          <p class="md-display-1" style="left: 68%">Running</p>
         </slide>
         <slide>
           <g-image
@@ -123,7 +123,7 @@
             class="image"
             fit=outside
           />
-          <p class="md-display-2" style="left: 68%">Reading</p>
+          <p class="md-display-1" style="left: 68%">Reading</p>
         </slide>
         <slide>
           <g-image
@@ -134,7 +134,7 @@
             quality="100"
             class="image"
           />
-          <p class="md-display-2">Programming</p>
+          <p class="md-display-1">Programming</p>
         </slide>
       </carousel>
     </ClientOnly>
