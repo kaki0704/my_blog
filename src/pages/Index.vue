@@ -180,7 +180,6 @@ export default {
   top:70%;
   left:50%;
   font-family: 'Noto Sans', sans-serif;
-  opacity: 70%;
   font-weight: bold;
 }
 
