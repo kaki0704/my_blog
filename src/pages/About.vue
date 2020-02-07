@@ -1,20 +1,38 @@
 <template>
   <Layout>
-    <h1>About us</h1>
+    <h1>About</h1>
     <p>{{ $static.metaData.siteDescription }}</p>
+    <md-avatar class="md-large">
+      <g-image src="~/assets/images/me.jpg" alt="me" />
+    </md-avatar>
+    <p class="md-headline">経歴</p>
     <p>
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-      roots in a piece of classical Latin literature from 45 BC, making it over
-      2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-      College in Virginia, looked up one of the more obscure Latin words,
-      consectetur, from a Lorem Ipsum passage, and going through the cites of
-      the word in classical literature, discovered the undoubtable source. Lorem
-      Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-      Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-      book is a treatise on the theory of ethics, very popular during the
-      Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
-      amet..", comes from a line in section 1.10.32.
+      岐阜県で育ち、大学進学とともに福井県へ...
     </p>
+    <p>
+      新卒では郵便局に入社し、名古屋の大学院にて経営学を学ぶために進学する。
+    </p>
+    <p>
+      何かスキルを身につけたいと思い、郵便局を退職し、地元の製造メーカーに人生初の転職を経験し、
+    </p>
+    <p>
+      プログラミングに触れ、一生の仕事にしていきたいと決意し、web系のシステム会社に二度目の転職。
+    </p>
+    <p>
+      現在は岐阜でエンジニアとしてリモートワークで働いています。
+    </p>
+    <p class="md-headline">スキル</p>
+    <ul>
+      <li>
+        Ruby, Ruby on Rails
+      </li>
+      <li>
+        Javascript, Vue.js, Nuxt.js
+      </li>
+      <li>
+        typescript, Angular
+      </li>
+    </ul>
   </Layout>
 </template>
 

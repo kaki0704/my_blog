@@ -9,7 +9,7 @@
       <md-card>
         <md-card-media>
           <md-ripple>
-            <g-image :src="edge.node.cover_image" style="width: 100%" fit="fill"/>
+            <g-link :to="edge.node.path"><g-image :src="edge.node.cover_image" style="width: 100%" fit="fill"/></g-link>
           </md-ripple>
         </md-card-media>
         <md-card-header>

@@ -39,13 +39,17 @@
         <md-list-item>
           <md-icon class="fa fa-twitter"></md-icon>
           <span class="md-list-item-text md-accent"
-            ><a class="nav__link" :href="twitter_href" target="_blank">Twitter</a></span
+            ><a class="nav__link" :href="twitter_href" target="_blank"
+              >Twitter</a
+            ></span
           >
         </md-list-item>
         <md-list-item>
           <md-icon class="fa fa-github"></md-icon>
           <span class="md-list-item-text md-accent"
-            ><a class="nav__link" :href="github_href" target="_brank">Github</a></span
+            ><a class="nav__link" :href="github_href" target="_brank"
+              >Github</a
+            ></span
           >
         </md-list-item>
       </md-list>
@@ -80,11 +84,9 @@ export default {
   props: ["showFooter"]
 };
 </script>
-
 <style>
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Sawarabi Gothic', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;

@@ -10,75 +10,9 @@
 
     <h1>Hello, world!</h1>
 
-    <p>
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-      roots in a piece of classical Latin literature from 45 BC, making it over
-      2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-      College in Virginia, looked up one of the more obscure Latin words,
-      consectetur, from a Lorem Ipsum passage, and going through the cites of
-      the word in classical literature, discovered the undoubtable source. Lorem
-      Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-      Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
-      book is a treatise on the theory of ethics, very popular during the
-      Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
-      amet..", comes from a line in section 1.10.32.
+    <p style="margin-bottom: 100px;">
+      プログラミング初心者に向けて情報を発信していきます。
     </p>
-    <ClientOnly>
-      <carousel
-        :per-page="1"
-        :navigate-to="1"
-        :loop="true"
-        :autoplay="true"
-        :autoplayHoverPause="true"
-        paginationColor="#abb1b5"
-        :autoplayTimeout="4000"
-      >
-        <slide>
-          <g-image
-            alt="Example image"
-            src="~/assets/images/1.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="Example image"
-            src="~/assets/images/2.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="Example image"
-            src="~/assets/images/3.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="Example image"
-            src="~/assets/images/4.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="Example image"
-            src="~/assets/images/5.jpg"
-            height="1200"
-            width="1800"
-          />
-        </slide>
-      </carousel>
-    </ClientOnly>
     <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
     <ClientOnly>
       <carousel
@@ -134,6 +68,62 @@
         </slide>
       </carousel>
     </ClientOnly>
+    <h2 class="sub-title md-display-1" style="font-weight: bold;">Skill</h2>
+    <ClientOnly>
+      <carousel
+        :per-page="1"
+        :loop="true"
+        :autoplay="true"
+        :autoplayHoverPause="true"
+        paginationColor="#abb1b5"
+        :autoplayTimeout="4000"
+      >
+        <slide>
+          <g-image
+            alt="rails-ruby"
+            src="~/assets/images/skill/ruby-rails.png"
+            quality="100"
+            height="430"
+            width="1500"
+            class="image"
+            fit="contain"
+            background="#eeeeee"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="vue-nuxt"
+            src="~/assets/images/skill/vue-nuxt.png"
+            quality="100"
+            background="#fff"
+            height="430"
+            width="1500"
+            fit="contain"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="reading"
+            src="~/assets/images/skill/angular.png"
+            quality="100"
+            height="430"
+            width="1500"
+            fit="inside"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="graphql"
+            src="~/assets/images/skill/graphql.png"
+            quality="100"
+            background="#fff"
+            height="500"
+            width="1500"
+            fit="contain"
+          />
+        </slide>
+      </carousel>
+    </ClientOnly>
   </Layout>
 </template>
 
@@ -170,5 +160,10 @@ export default {
   margin-top: 100px;
   color: gray;
   text-align:  center;
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 </style>
