@@ -176,12 +176,12 @@ export default {
 
 .VueCarousel-slide p {
   position:absolute;
-  color: #dadada;
+  color: #fff;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  top:15%;
-  left:25%;
+  top:70%;
+  left:50%;
   font-family: 'Noto Sans', sans-serif;
   font-weight: bold;
 }
