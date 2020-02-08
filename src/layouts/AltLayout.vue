@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <md-app md-waterfall md-mode="fixed">
+    <md-app md-mode="fixed">
       <md-app-toolbar class="fixed-toolbar" elevation="5">
         <small>
           <md-button class="md-icon-button" @click="showNavigation = true">
