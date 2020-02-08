@@ -1,17 +1,12 @@
 <template>
   <Layout :showFooter="true">
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image
-      alt="Example image"
-      src="~/assets/images/top_image.jpeg"
-      height="800"
-      width="1800"
-    />
 
-    <h1>Hello, world!</h1>
+    <h2 class="main-title md-display-1" style="font-weight: bold;">
+      Everything thriving
+    </h2>
 
     <p style="margin-bottom: 100px;">
-      プログラミング初心者に向けて情報を発信していきます。
+      誰もが良いことがあるように願いたい。この言葉が大好きです。プログラミング初心者に向けて情報を発信していきます。
     </p>
     <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
     <ClientOnly>
@@ -148,7 +143,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .home-links a {
   margin-right: 1rem;
 }
@@ -159,11 +154,17 @@ export default {
 .sub-title {
   margin-top: 100px;
   color: gray;
-  text-align:  center;
-  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.main-title {
+  color: gray;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
 }
 
 p {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 </style>

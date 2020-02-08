@@ -23,10 +23,6 @@ export default function (Vue, { router, head, isClient }) {
     rel: 'stylesheet',
     href: "https://fonts.googleapis.com/css?family=Noto+Serif+JP|Oswald&display=swap"
   })
-  head.link.push({
-    rel: 'stylesheet',
-    href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto:400i&display=swap"
-  })
   // Set default layout as a global component
   Vue.component('Layout', AltLayout)
   Vue.use(VueDisqus)

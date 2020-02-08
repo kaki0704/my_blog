@@ -54,6 +54,37 @@
         </md-list-item>
       </md-list>
     </md-drawer>
+    <ClientOnly>
+      <carousel
+        :per-page="1"
+        :navigate-to="1"
+        :loop="true"
+        :autoplay="true"
+        :autoplayHoverPause="true"
+        paginationColor="#abb1b5"
+        :autoplayTimeout="4000"
+        :adjustableHeight="true"
+      >
+        <slide>
+          <g-image
+            alt="top"
+            src="~/assets/images/top-chess.jpg"
+            height="700"
+            width="1800"
+            class="home-image"
+          />
+        </slide>
+        <slide>
+          <g-image
+            alt="top"
+            src="~/assets/images/dark-mountain.jpg"
+            height="700"
+            width="1800"
+            class="home-image"
+          />
+        </slide>
+      </carousel>
+    </ClientOnly>
     <div class="slot">
       <slot />
     </div>
@@ -79,14 +110,22 @@ export default {
     showSidepanel: false
   }),
   components: {
-    Footer
+    Footer,
+    Carousel: () =>
+      import("vue-carousel")
+        .then(m => m.Carousel)
+        .catch(),
+    Slide: () =>
+      import("vue-carousel")
+        .then(m => m.Slide)
+        .catch()
   },
   props: ["showFooter"]
 };
 </script>
 <style>
 body {
-  font-family: 'Sawarabi Gothic', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
