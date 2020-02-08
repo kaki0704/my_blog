@@ -17,6 +17,7 @@
     "vue-material": "^1.0.0-beta-11",
     "vue-server-renderer": "^2.6.11",
     "vue-template-compiler": "^2.6.11",
+    "vuelidate": "^0.7.5",
     "wow.js": "^1.2.2"
   },
   "devDependencies": {
