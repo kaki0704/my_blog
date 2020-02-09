@@ -110,7 +110,6 @@
             </slide>
           </carousel>
         </ClientOnly>
-        <md-button @click="showDialog = true">クリック！</md-button>
         <div class="slot">
           <slot />
         </div>
