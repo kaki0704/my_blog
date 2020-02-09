@@ -12,6 +12,9 @@
             {{ $static.metaData.siteName }}
           </md-button>
         </g-link>
+        <md-button class="md-icon-button" @click="showDialog = true">
+          <md-icon class="fa fa-envelope"></md-icon>
+        </md-button>
       </md-app-toolbar>
       <md-app-drawer :md-active.sync="showNavigation" md-swipeable>
         <md-toolbar class="md-transparent" md-elevation="0">
@@ -28,7 +31,9 @@
           <md-list-item>
             <md-icon class="fa fa-address-book"></md-icon>
             <span class="md-list-item-text md-accent"
-              ><g-link class="nav__link" to="/about">サイトについて</g-link></span
+              ><g-link class="nav__link" to="/about"
+                >サイトについて</g-link
+              ></span
             >
           </md-list-item>
           <md-list-item>
@@ -55,7 +60,7 @@
           </md-list-item>
         </md-list>
       </md-app-drawer>
-      <md-app-content  style="padding: 0px;">
+      <md-app-content style="padding: 0px;">
         <ClientOnly>
           <carousel
             :per-page="1"
@@ -105,12 +110,82 @@
             </slide>
           </carousel>
         </ClientOnly>
+        <md-button @click="showDialog = true">クリック！</md-button>
         <div class="slot">
           <slot />
         </div>
         <Footer v-if="showFooter"></Footer>
       </md-app-content>
     </md-app>
+    <md-dialog :md-active.sync="showDialog" class="contact-form">
+      <md-dialog-title>お問い合わせ</md-dialog-title>
+      <form
+        name="contact"
+        method="post"
+        @submit.prevent="validateContact"
+        action="/success/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <md-card class="md-layout-item md-size-200 md-small-size-150">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label> Don’t fill this out: <input name="bot-field" /> </label>
+          </p>
+          <div class="sender-info" style="padding: 1em">
+            <md-field :class="getValidationClass('name')">
+              <label for="name" class="label">名前</label>
+              <md-input
+                name="name"
+                id="name"
+                autocomplete="given-name"
+                v-model="form.name"
+                :disabled="sending"
+              />
+              <span class="md-error" v-if="!$v.form.name.required"
+                >名前の入力は必須です</span
+              >
+              <span class="md-error" v-else-if="!$v.form.name.minlength"
+                >名前は３文字以上で入力して下さい</span
+              >
+            </md-field>
+            <md-field :class="getValidationClass('email')">
+              <label for="email" class="label">メールアドレス</label>
+              <md-input
+                name="email"
+                id="email"
+                autocomplete="email"
+                v-model="form.email"
+                :disabled="sending"
+              />
+              <span class="md-error" v-if="!$v.form.email.required"
+                >メールアドレスは必須です。</span
+              >
+              <span class="md-error" v-else-if="!$v.form.name.email"
+                >不正なメールアドレスです。再度ご確認ください</span
+              >
+            </md-field>
+            <md-field :class="getValidationClass('message')">
+              <label for="message">メッセージ</label>
+              <md-textarea
+                name="message"
+                id="message"
+                autocomplete="message"
+                v-model="form.message"
+                :disabled="sending"
+              />
+              <span class="md-error" v-if="!$v.form.message.required"
+                >メッセージは必須です。</span
+              >
+            </md-field>
+          </div>
+
+          <md-button type="submit" style="color: white; background-color: gray"
+            >メッセージを送る</md-button
+          >
+        </md-card>
+      </form>
+    </md-dialog>
   </div>
 </template>
 
@@ -124,11 +199,26 @@ query {
 
 <script>
 import Footer from "~/components/Footer.vue";
+import { validationMixin } from "vuelidate";
+import {
+  required,
+  email,
+  minLength,
+  maxLength
+} from "vuelidate/lib/validators";
 export default {
+  mixins: [validationMixin],
   data: () => ({
     twitter_href: "https://twitter.com/kaki_0704",
     github_href: "https://github.com/yamady0704",
     showNavigation: false,
+    showDialog: false,
+    sending: false,
+    form: {
+      name: "",
+      email: "",
+      message: ""
+    }
   }),
   components: {
     Footer,
@@ -141,12 +231,54 @@ export default {
         .then(m => m.Slide)
         .catch()
   },
-  props: ["showFooter"]
+  props: ["showFooter"],
+  validations: {
+    form: {
+      name: {
+        required,
+        minLength: minLength(3)
+      },
+      message: {
+        required
+      },
+      age: {
+        required,
+        maxLength: maxLength(3)
+      },
+      gender: {
+        required
+      },
+      email: {
+        required,
+        email
+      }
+    }
+  },
+  methods: {
+    getValidationClass(fieldName) {
+      const field = this.$v.form[fieldName];
+      if (field) {
+        return {
+          "md-invalid": field.$invalid && field.$dirty
+        };
+      }
+    },
+    sendingMessage() {
+      this.sending = true;
+    },
+    validateContact() {
+      this.$v.$touch();
+
+      if (!this.$v.$invalid) {
+        this.sendingMessage();
+      }
+    }
+  }
 };
 </script>
 <style>
 body {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -224,6 +356,18 @@ code {
 }
 
 .home-image {
-  padding: -500%
+  padding: -500%;
+}
+
+.md-dialog {
+  background-color: #2c2c2c;
+  width: 30%;
+  color: #eeeeee;
+}
+
+.md-dialog-title {
+  background-color: #2c2c2c;
+  color: white;
+  text-align: center;
 }
 </style>
