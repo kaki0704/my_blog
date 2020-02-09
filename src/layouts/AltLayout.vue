@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div>
     <md-app md-mode="fixed">
       <md-app-toolbar class="fixed-toolbar" elevation="5">
         <small>
@@ -55,24 +55,24 @@
           </md-list-item>
         </md-list>
       </md-app-drawer>
-      <md-app-content>
+      <md-app-content  style="padding: 0px;">
         <ClientOnly>
           <carousel
             :per-page="1"
             :navigate-to="1"
             :loop="true"
             :autoplay="true"
-            :autoplayHoverPause="true"
             paginationColor="#abb1b5"
-            :autoplayTimeout="4000"
+            :autoplayTimeout="3000"
             :adjustableHeight="true"
+            :paginationEnabled="false"
           >
             <slide>
               <g-image
                 alt="top"
                 src="~/assets/images/top-chess.jpg"
-                height="700"
-                width="1800"
+                height="500"
+                width="2000"
                 class="home-image"
               />
             </slide>
@@ -80,8 +80,26 @@
               <g-image
                 alt="top"
                 src="~/assets/images/dark-mountain.jpg"
-                height="700"
-                width="1800"
+                height="500"
+                width="2000"
+                class="home-image"
+              />
+            </slide>
+            <slide>
+              <g-image
+                alt="top"
+                src="~/assets/images/1.jpg"
+                height="500"
+                width="2000"
+                class="home-image"
+              />
+            </slide>
+            <slide>
+              <g-image
+                alt="top"
+                src="~/assets/images/2.jpg"
+                height="500"
+                width="2000"
                 class="home-image"
               />
             </slide>
@@ -111,7 +129,6 @@ export default {
     twitter_href: "https://twitter.com/kaki_0704",
     github_href: "https://github.com/yamady0704",
     showNavigation: false,
-    showSidepanel: false
   }),
   components: {
     Footer,
@@ -137,6 +154,14 @@ body {
 
 .body {
   background: #eeeeee;
+}
+
+.md-app {
+  max-height: 1000px;
+}
+
+.md-app-content {
+  padding: 0px;
 }
 
 .md-title {
@@ -179,6 +204,7 @@ i.md-icon {
 .md-drawer.md-theme-default {
   background-color: #2c2c2c;
   width: 250px;
+  position: fixed;
 }
 
 .md-toolbar.md-transparent {
@@ -195,5 +221,9 @@ a.link {
 
 code {
   background-color: #2c2c2c;
+}
+
+.home-image {
+  padding: -500%
 }
 </style>
