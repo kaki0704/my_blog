@@ -121,7 +121,7 @@
       <form
         name="contact"
         method="post"
-        @submit.prevent="validateContact"
+        @submit.prevent="sendingMessage"
         action="/success/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
@@ -262,8 +262,18 @@ export default {
         };
       }
     },
-    sendingMessage() {
+    sendingMessage(e) {
       this.sending = true;
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.form
+        })
+      })
+        .then(() => this.$router.push("/success"))
+        .catch(error => alert(error));
     },
     validateContact() {
       this.$v.$touch();
@@ -271,6 +281,13 @@ export default {
       if (!this.$v.$invalid) {
         this.sendingMessage();
       }
+    },
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
     }
   }
 };
