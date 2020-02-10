@@ -1,10 +1,10 @@
 <template>
   <Layout>
     <h1>About</h1>
-    <p>{{ $static.metaData.siteDescription }}</p>
     <md-avatar class="md-large">
       <g-image src="~/assets/images/me.jpg" alt="me" />
     </md-avatar>
+    <p>{{ $static.metaData.siteDescription }}</p>
     <p class="md-headline">経歴</p>
     <p>
       岐阜県で育ち、大学進学とともに福井県へ...
@@ -48,7 +48,7 @@
 export default {
   metaInfo() {
     return {
-      title: "About us",
+      title: "About",
       meta: [
         { name: "description", content: this.$static.metaData.siteDescription }
       ]
@@ -56,3 +56,16 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: bold;
+    color: #404040;
+  }
+  li {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: bold;
+    color: #404040;
+  }
+</style>

@@ -1,123 +1,149 @@
 <template>
   <Layout :showFooter="true">
-    <h2 class="main-title md-display-1" style="font-weight: bold;">
-      Everything thriving
-    </h2>
+    <div class="message title-message"  style="margin-bottom: 100px;">
+      <h2 class="main-title md-display-1" style="font-weight: bold;">
+        Everything thriving
+      </h2>
 
-    <p style="margin-bottom: 100px;">
-      誰もが良いことがあるように願いたい。この言葉が大好きです。プログラミング初心者に向けて情報を発信していきます。
-    </p>
-    <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
-    <ClientOnly>
-      <carousel
-        :per-page="1"
-        :navigate-to="1"
-        :loop="true"
-        :autoplay="true"
-        :autoplayHoverPause="true"
-        paginationColor="#abb1b5"
-        :autoplayTimeout="4000"
-        :adjustableHeight="true"
-      >
-        <slide>
-          <g-image
-            alt="chess"
-            src="~/assets/images/hobby/chess.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-            class="image"
-          />
-        </slide>
-        <slide class="hobby-slide">
-          <g-image
-            alt="running"
-            src="~/assets/images/hobby/running.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-            class="image"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="reading"
-            src="~/assets/images/hobby/reading.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-            class="image"
-            fit="outside"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="programming"
-            src="~/assets/images/hobby/programming.jpg"
-            height="1200"
-            width="1800"
-            quality="100"
-            class="image"
-          />
-        </slide>
-      </carousel>
-    </ClientOnly>
+      <p>
+        大吉大利 - ずっと幸せであるように -
+      </p>
+      <p>
+        みんなが幸せで良いことで溢れるように、仕事や趣味に取り組んでいます。
+      </p>
+      <p>
+        プログラミングをやりたいのにどうしたらいいかわからない、
+        どうやって仕事をしたらいいかわからない時に、このサイトで書いていることが助けになれば嬉しいです。
+      </p>
+    </div>
+    <div class="message hobby-message"  style="margin-bottom: 100px;">
+      <h2 class="sub-title md-display-1" style="font-weight: bold;">Hobby</h2>
+      <p>
+        中学校の頃からチェスを始め、今も趣味で対局することが多いです。制限時間が限られているBlitzよりも、じっくり考えて駒を進めるチェスが好きです。
+      </p>
+      <p  style="margin-bottom: 100px;">
+        また、毎朝5km走ることが習慣になっていて、これをしないと頭が回らなかったり、体調崩したりするくらいランニング中毒者になっています。隙間の時間に本を読むことも好きで。技術書は仕事で必要となるのでもちろん読みますし、他にも経営の本を読んだりで月1冊のペースで読み進めています。
+      </p>
+
+      <ClientOnly>
+        <carousel
+          :per-page="1"
+          :navigate-to="1"
+          :loop="true"
+          :autoplay="true"
+          :autoplayHoverPause="true"
+          paginationColor="#abb1b5"
+          :autoplayTimeout="4000"
+          :adjustableHeight="true"
+        >
+          <slide>
+            <g-image
+              alt="chess"
+              src="~/assets/images/hobby/chess.jpg"
+              height="1200"
+              width="1800"
+              quality="100"
+              class="image"
+            />
+          </slide>
+          <slide class="hobby-slide">
+            <g-image
+              alt="running"
+              src="~/assets/images/hobby/running.jpg"
+              height="1200"
+              width="1800"
+              quality="100"
+              class="image"
+            />
+          </slide>
+          <slide>
+            <g-image
+              alt="reading"
+              src="~/assets/images/hobby/reading.jpg"
+              height="1200"
+              width="1800"
+              quality="100"
+              class="image"
+              fit="outside"
+            />
+          </slide>
+          <slide>
+            <g-image
+              alt="programming"
+              src="~/assets/images/hobby/programming.jpg"
+              height="1200"
+              width="1800"
+              quality="100"
+              class="image"
+            />
+          </slide>
+        </carousel>
+      </ClientOnly>
+    </div>
     <h2 class="sub-title md-display-1" style="font-weight: bold;">Skill</h2>
-    <ClientOnly>
-      <carousel
-        :per-page="1"
-        :loop="true"
-        :autoplay="true"
-        :autoplayHoverPause="true"
-        paginationColor="#abb1b5"
-        :autoplayTimeout="4000"
-      >
-        <slide>
-          <g-image
-            alt="rails-ruby"
-            src="~/assets/images/skill/ruby-rails.png"
-            quality="100"
-            height="430"
-            width="1500"
-            class="image"
-            fit="contain"
-            background="#eeeeee"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="vue-nuxt"
-            src="~/assets/images/skill/vue-nuxt.png"
-            quality="100"
-            background="#fff"
-            height="430"
-            width="1500"
-            fit="contain"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="reading"
-            src="~/assets/images/skill/angular.png"
-            quality="100"
-            height="430"
-            width="1500"
-            fit="inside"
-          />
-        </slide>
-        <slide>
-          <g-image
-            alt="graphql"
-            src="~/assets/images/skill/graphql.png"
-            quality="100"
-            background="#fff"
-            height="500"
-            width="1500"
-            fit="contain"
-          />
-        </slide>
-      </carousel>
-    </ClientOnly>
+    <div class="message skill-message">
+      <p>
+        仕事ではRuby, Ruby on Railsを使用しています。
+      </p>
+      <p style="margin-bottom: 100px">
+        このサイトの制作にはVueとGraphQLを使用しました。あと、Angularは勉強中です。
+      </p>
+      <ClientOnly>
+        <carousel
+          :per-page="1"
+          :loop="true"
+          :autoplay="true"
+          :autoplayHoverPause="true"
+          paginationColor="#abb1b5"
+          :autoplayTimeout="4000"
+        >
+          <slide>
+            <g-image
+              alt="rails-ruby"
+              src="~/assets/images/skill/ruby-rails.png"
+              quality="100"
+              height="430"
+              width="1500"
+              class="image"
+              fit="contain"
+              background="#eeeeee"
+            />
+          </slide>
+          <slide>
+            <g-image
+              alt="vue-nuxt"
+              src="~/assets/images/skill/vue-nuxt.png"
+              quality="100"
+              background="#fff"
+              height="430"
+              width="1500"
+              fit="contain"
+            />
+          </slide>
+          <slide>
+            <g-image
+              alt="reading"
+              src="~/assets/images/skill/angular.png"
+              quality="100"
+              height="430"
+              width="1500"
+              fit="inside"
+            />
+          </slide>
+          <slide>
+            <g-image
+              alt="graphql"
+              src="~/assets/images/skill/graphql.png"
+              quality="100"
+              background="#fff"
+              height="500"
+              width="1500"
+              fit="contain"
+            />
+          </slide>
+        </carousel>
+      </ClientOnly>
+    </div>
   </Layout>
 </template>
 
@@ -148,7 +174,7 @@ export default {
     }
   },
   metaInfo: {
-    title: "Hello, world!"
+    title: "Index"
   },
   components: {
     Footer,
@@ -180,12 +206,14 @@ export default {
 
 .sub-title {
   margin-top: 100px;
+  margin-bottom: 50px;
   color: gray;
   text-align: center;
   font-family: "Oswald", sans-serif;
 }
 
 .main-title {
+  margin-bottom: 50px;
   color: gray;
   text-align: center;
   font-family: "Oswald", sans-serif;
@@ -193,5 +221,7 @@ export default {
 
 p {
   font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  color: #404040;
 }
 </style>

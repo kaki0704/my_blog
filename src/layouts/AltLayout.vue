@@ -88,7 +88,7 @@
             <slide>
               <g-image
                 alt="top"
-                src="~/assets/images/dark-mountain.jpg"
+                src="~/assets/images/3.jpg"
                 height="500"
                 width="2000"
                 class="home-image"
@@ -116,7 +116,7 @@
         </ClientOnly>
         <div class="md-layout md-alignment-center" style="padding: 2em">
           <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
-            <md-dialog-title style="background-color: #202020;">
+            <md-dialog-title >
               お問い合わせ
             </md-dialog-title>
             <form
@@ -406,5 +406,9 @@ code {
 
 .submit-button {
   margin-bottom: 20px;
+}
+
+.md-field:after {
+  background-color: darkgray;
 }
 </style>

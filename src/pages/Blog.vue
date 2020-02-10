@@ -82,8 +82,10 @@ query ($page: Int) {
 import { Pager } from "gridsome";
 
 export default {
-  components: { Pager },
-  name: "SingleChip"
+  metaInfo: {
+    title: "Blog"
+  },
+  components: { Pager }
 };
 </script>
 
