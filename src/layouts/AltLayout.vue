@@ -320,7 +320,8 @@ body {
 }
 
 .md-app {
-  max-height: 900px;
+  max-height: 100vh;
+  border: 1px solid rgba(#000, .12);
 }
 
 .md-app-content {
