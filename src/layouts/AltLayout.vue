@@ -125,7 +125,7 @@
               <form
                 name="contact"
                 method="post"
-                @submit.prevent="validateContact"
+                @submit.prevent="sendingMessage"
                 action="/success/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
@@ -272,13 +272,6 @@ export default {
       message: {
         required
       },
-      age: {
-        required,
-        maxLength: maxLength(3)
-      },
-      gender: {
-        required
-      },
       email: {
         required,
         email
@@ -295,23 +288,19 @@ export default {
       }
     },
     sendingMessage(e) {
-      this.sending = true;
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({
-          "form-name": e.target.getAttribute("name"),
-          ...this.form
-        })
-      })
-        .then(() => this.$router.push("/success"))
-        .catch(error => alert(error));
-    },
-    validateContact() {
-      this.$v.$touch();
-
+      this.$v.$touch()
       if (!this.$v.$invalid) {
-        this.sendingMessage();
+        this.sending = true;
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: this.encode({
+            "form-name": e.target.getAttribute("name"),
+            ...this.form
+          })
+        })
+          .then(() => this.$router.push("/success"))
+          .catch(error => alert(error));
       }
     },
     encode(data) {
