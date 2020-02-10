@@ -115,7 +115,7 @@
           </carousel>
         </ClientOnly>
         <div class="md-layout md-alignment-center" style="padding: 2em">
-          <md-dialog :md-active.sync="showDialog" style="max-height: 72%">
+          <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
             <md-dialog-title style="background-color: #202020;">
               お問い合わせ
             </md-dialog-title>
