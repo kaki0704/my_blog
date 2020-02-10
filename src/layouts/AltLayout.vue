@@ -115,8 +115,8 @@
           </carousel>
         </ClientOnly>
         <div class="md-layout md-alignment-center" style="padding: 2em">
-          <md-dialog :md-active.sync="showDialog" style="max-height: 65%">
-            <md-dialog-title>
+          <md-dialog :md-active.sync="showDialog" style="max-height: 72%">
+            <md-dialog-title style="background-color: #202020;">
               お問い合わせ
             </md-dialog-title>
             <form
@@ -192,16 +192,18 @@
                 </md-field>
               </div>
 
-              <md-button
-                @click="showDialog = false"
-                style="color: white; background-color: gray"
-                >キャンセル</md-button
-              >
-              <md-button
-                type="submit"
-                style="color: white; background-color: lightgreen"
-                >メッセージを送る</md-button
-              >
+              <div class="submit-button">
+                <md-button
+                  @click="showDialog = false"
+                  style="color: white; background-color: gray"
+                  >キャンセル</md-button
+                >
+                <md-button
+                  type="submit"
+                  style="color: white; background-color: lightgreen"
+                  >メッセージを送る</md-button
+                >
+              </div>
             </form>
           </md-dialog>
         </div>
@@ -402,5 +404,9 @@ code {
   background-color: #2c2c2c;
   color: white;
   text-align: center;
+}
+
+.submit-button {
+  margin-bottom: 20px;
 }
 </style>

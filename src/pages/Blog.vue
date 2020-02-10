@@ -31,14 +31,16 @@
           >
         </md-card-actions>
         <md-card-actions>
+          カテゴリ：
           <g-link
             style="padding-right: .25em"
+            class="category"
             v-for="tag in edge.node.tags"
             :to="tag.path"
             :key="tag.id"
-            ><md-button class="md-raised" :md-ripple="false">{{
+            >{{
               tag.id
-            }}</md-button></g-link
+            }}</g-link
           >
         </md-card-actions>
       </md-card>
@@ -93,6 +95,10 @@ export default {
   padding: 8px 16px;
   float: left;
   margin-bottom: 20px;
+}
+
+.category {
+  margin-right: 10px;
 }
 
 </style>
