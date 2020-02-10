@@ -190,9 +190,6 @@
                     >メッセージは必須です。</span
                   >
                 </md-field>
-              </div>
-
-              <div class="submit-button">
                 <md-button
                   @click="showDialog = false"
                   style="color: white; background-color: gray"
