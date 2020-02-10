@@ -115,100 +115,94 @@
           </carousel>
         </ClientOnly>
         <div class="md-layout md-alignment-center" style="padding: 2em">
-          <md-dialog :md-active.sync="showDialog">
-            <md-card style="padding: 1em">
-              <md-card-header>
-                <div class="md-title">
-                  お問い合わせ
-                </div>
-              </md-card-header>
-              <form
-                name="contact"
-                method="post"
-                @submit.prevent="sendingMessage"
-                action="/success/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p hidden>
-                  <label>
-                    Don’t fill this out: <input name="bot-field" />
-                  </label>
-                </p>
-                <div class="sender-info" style="padding: 1em">
-                  <md-field :class="getValidationClass('name')">
-                    <label for="name" class="label">名前</label>
-                    <md-input
-                      name="name"
-                      id="name"
-                      autocomplete="given-name"
-                      v-model="form.name"
-                      :disabled="sending"
-                      class="md-accent"
-                    />
-                    <span
-                      class="md-error md-primary"
-                      v-if="!$v.form.name.required"
-                      >名前の入力は必須です</span
-                    >
-                    <span
-                      class="md-error md-primary"
-                      v-else-if="!$v.form.name.minlength"
-                      >名前は３文字以上で入力して下さい</span
-                    >
-                  </md-field>
-                  <md-field :class="getValidationClass('email')">
-                    <label for="email" class="label">メールアドレス</label>
-                    <md-input
-                      name="email"
-                      id="email"
-                      autocomplete="email"
-                      v-model="form.email"
-                      :disabled="sending"
-                      class="md-accent"
-                    />
-                    <span
-                      class="md-error md-primary"
-                      v-if="!$v.form.email.required"
-                      >メールアドレスは必須です。</span
-                    >
-                    <span
-                      class="md-error md-primary"
-                      v-else-if="!$v.form.name.email"
-                      >不正なメールアドレスです。再度ご確認ください</span
-                    >
-                  </md-field>
-                  <md-field :class="getValidationClass('message')">
-                    <label for="message">メッセージ</label>
-                    <md-textarea
-                      name="message"
-                      id="message"
-                      autocomplete="message"
-                      v-model="form.message"
-                      :disabled="sending"
-                      class="md-accent"
-                    />
-                    <span
-                      class="md-error md-primary"
-                      v-if="!$v.form.message.required"
-                      >メッセージは必須です。</span
-                    >
-                  </md-field>
-                </div>
+          <md-dialog :md-active.sync="showDialog" style="max-height: 65%">
+            <md-dialog-title>
+              お問い合わせ
+            </md-dialog-title>
+            <form
+              name="contact"
+              method="post"
+              @submit.prevent="sendingMessage"
+              action="/success/"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label> Don’t fill this out: <input name="bot-field" /> </label>
+              </p>
+              <div class="sender-info" style="padding: 1em">
+                <md-field :class="getValidationClass('name')">
+                  <label for="name" class="label">名前</label>
+                  <md-input
+                    name="name"
+                    id="name"
+                    autocomplete="given-name"
+                    v-model="form.name"
+                    :disabled="sending"
+                    class="md-accent"
+                  />
+                  <span
+                    class="md-error md-primary"
+                    v-if="!$v.form.name.required"
+                    >名前の入力は必須です</span
+                  >
+                  <span
+                    class="md-error md-primary"
+                    v-else-if="!$v.form.name.minlength"
+                    >名前は３文字以上で入力して下さい</span
+                  >
+                </md-field>
+                <md-field :class="getValidationClass('email')">
+                  <label for="email" class="label">メールアドレス</label>
+                  <md-input
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    v-model="form.email"
+                    :disabled="sending"
+                    class="md-accent"
+                  />
+                  <span
+                    class="md-error md-primary"
+                    v-if="!$v.form.email.required"
+                    >メールアドレスは必須です。</span
+                  >
+                  <span
+                    class="md-error md-primary"
+                    v-else-if="!$v.form.name.email"
+                    >不正なメールアドレスです。再度ご確認ください</span
+                  >
+                </md-field>
+                <md-field :class="getValidationClass('message')">
+                  <label for="message">メッセージ</label>
+                  <md-textarea
+                    name="message"
+                    id="message"
+                    autocomplete="message"
+                    v-model="form.message"
+                    :disabled="sending"
+                    class="md-accent"
+                  />
+                  <span
+                    class="md-error md-primary"
+                    v-if="!$v.form.message.required"
+                    >メッセージは必須です。</span
+                  >
+                </md-field>
+              </div>
 
-                <md-button
-                  @click="showDialog = false"
-                  style="color: white; background-color: gray"
-                  >キャンセル</md-button
-                >
-                <md-button
-                  type="submit"
-                  style="color: white; background-color: lightgreen"
-                  >メッセージを送る</md-button
-                >
-              </form>
-            </md-card>
+              <md-button
+                @click="showDialog = false"
+                style="color: white; background-color: gray"
+                >キャンセル</md-button
+              >
+              <md-button
+                type="submit"
+                style="color: white; background-color: lightgreen"
+                >メッセージを送る</md-button
+              >
+            </form>
           </md-dialog>
         </div>
         <div class="slot">
@@ -288,7 +282,7 @@ export default {
       }
     },
     sendingMessage(e) {
-      this.$v.$touch()
+      this.$v.$touch();
       if (!this.$v.$invalid) {
         this.sending = true;
         fetch("/", {
