@@ -18,7 +18,7 @@
           </div>
           <div class="md-subhead">
             <p>
-              Posted {{ edge.node.date }} ・ {{ edge.node.timeToRead }} min read
+              投稿日：{{ edge.node.date }}
             </p>
           </div>
         </md-card-header>
@@ -27,7 +27,7 @@
         </md-card-content>
         <md-card-actions>
           <g-link :to="edge.node.path"
-            ><md-button>記事を読む >></md-button></g-link
+            ><md-button class="read-page">記事を読む >></md-button></g-link
           >
         </md-card-actions>
         <md-card-actions>
@@ -38,9 +38,9 @@
             v-for="tag in edge.node.tags"
             :to="tag.path"
             :key="tag.id"
-            >{{
+            ><p class="category-link">{{
               tag.id
-            }}</g-link
+            }}</p></g-link
           >
         </md-card-actions>
       </md-card>
@@ -71,7 +71,7 @@ query ($page: Int) {
         }
         timeToRead
         path
-        cover_image (width: 1000, height: 300, quality: 100, blur: 5)
+        cover_image (width: 700, height: 300, quality: 100, blur: 5)
       }
     }
   }
@@ -89,7 +89,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.slot {
+  font-family: "Noto Sans JP", sans-serif;
+}
 .pager {
   font-size: 1.5rem;
   letter-spacing: 0.5px;
@@ -101,6 +104,16 @@ export default {
 
 .category {
   margin-right: 10px;
+}
+
+p.category-link {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #606060;
+}
+
+.read-page {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #7f7fff;
 }
 
 </style>

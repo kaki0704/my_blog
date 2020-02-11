@@ -7,7 +7,7 @@
 module.exports = {
   siteName: "Everything Thriving",
   siteDescription:
-    "岐阜に住んでいる会社員がプログラミングなどについて発信していくサイトです。",
+    "岐阜に住んでいるエンジニアがプログラミングなどについて発信していくサイトです。",
   icon: './src/assets/images/favicon.png',
   plugins: [
     {

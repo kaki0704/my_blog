@@ -8,7 +8,7 @@
           </md-button>
         </small>
         <g-link exact to="/">
-          <md-button class="md-title md-accent">
+          <md-button class="md-title md-accent" style="font-family: 'Oswald', sans-serif; padding-left: 10px;">
             {{ $static.metaData.siteName }}
           </md-button>
         </g-link>
@@ -114,7 +114,7 @@
             </slide>
           </carousel>
         </ClientOnly>
-        <div class="md-layout md-alignment-center" style="padding: 2em">
+        <div class="md-layout md-alignment-center">
           <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
             <md-dialog-title >
               お問い合わせ
@@ -220,6 +220,7 @@ query {
   }
 }
 </static-query>
+
 
 <script>
 import Footer from "~/components/Footer.vue";

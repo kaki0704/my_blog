@@ -1,5 +1,5 @@
 <template>
-  <footer>Copyright {{getCurrentYear}} by @yamady0704</footer>
+  <footer>Copyright {{getCurrentYear}} by @kaki_0704</footer>
 </template>
 
 <script>

@@ -7,16 +7,16 @@
     <p>{{ $static.metaData.siteDescription }}</p>
     <p class="md-headline">経歴</p>
     <p>
-      岐阜県で育ち、大学進学とともに福井県へ...
+      1988年岐阜県生まれ。高校までは岐阜県内に住んでいたが、大学進学とともに福井県へ...
     </p>
     <p>
-      新卒では郵便局に入社し、名古屋の大学院にて経営学を学ぶために進学する。
+      新卒では郵便局に入社した一方で、名古屋の大学院にて経営学を学ぶために進学する。
     </p>
     <p>
       何かスキルを身につけたいと思い、郵便局を退職し、地元の製造メーカーに人生初の転職を経験し、
     </p>
     <p>
-      プログラミングに触れ、一生の仕事にしていきたいと決意し、web系のシステム会社に二度目の転職。
+      プログラミングに触れ、一生の仕事にしていきたいと決意。web系のシステム会社に二度目の転職。
     </p>
     <p>
       現在は岐阜でエンジニアとしてリモートワークで働いています。
@@ -33,6 +33,28 @@
         typescript, Angular
       </li>
     </ul>
+    <div class="sns" style="margin-top: 20px; margin-botttom: 30px;">
+      <small>
+        <md-button class="md-icon-button">
+          <md-icon class="fa fa-github"></md-icon>
+        </md-button>
+      </small>
+      <small>
+        <md-button class="md-icon-button">
+          <md-icon class="fa fa-twitter"></md-icon>
+        </md-button>
+      </small>
+      <small>
+        <md-button class="md-icon-button">
+          <md-icon class="fa fa-facebook"></md-icon>
+        </md-button>
+      </small>
+      <small>
+        <md-button class="md-icon-button">
+          <md-icon class="fa fa-instagram"></md-icon>
+        </md-button>
+      </small>
+    </div>
   </Layout>
 </template>
 
@@ -58,14 +80,27 @@ export default {
 </script>
 
 <style scoped>
-  p {
-    font-family: "Noto Sans JP", sans-serif;
-    font-weight: bold;
-    color: #404040;
-  }
-  li {
-    font-family: "Noto Sans JP", sans-serif;
-    font-weight: bold;
-    color: #404040;
-  }
+body {
+  margin-bottom: 30%;
+}
+p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  color: #404040;
+}
+li {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  color: #404040;
+}
+
+i {
+  color: gray;
+
+}
+
+.sns {
+  float: right;
+  padding-right: 20%;
+}
 </style>

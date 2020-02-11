@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>タグ: {{ $page.tag.title }}</h1>
+    <h1>カテゴリ: {{ $page.tag.title }}</h1>
     <article
       v-for="edge in $page.tag.belongsTo.edges"
       :key="edge.node.id"
@@ -73,3 +73,11 @@ query($id: String!){
   }
 }
 </page-query>
+
+<style scoped>
+p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  color: #404040;
+}
+</style>
