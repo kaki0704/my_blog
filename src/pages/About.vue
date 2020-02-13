@@ -96,7 +96,6 @@ li {
 
 i {
   color: gray;
-
 }
 
 .sns {

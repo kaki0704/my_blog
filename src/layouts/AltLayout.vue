@@ -1,215 +1,226 @@
 <template>
   <div>
-    <md-app md-mode="fixed">
-      <md-app-toolbar class="fixed-toolbar" elevation="5">
-        <small>
-          <md-button class="md-icon-button" @click="showNavigation = true">
-            <md-icon class="fa fa-bars"></md-icon>
-          </md-button>
-        </small>
-        <g-link exact to="/">
-          <md-button class="md-title md-accent" style="font-family: 'Oswald', sans-serif; padding-left: 10px;">
-            {{ $static.metaData.siteName }}
-          </md-button>
-        </g-link>
-        <div class="md-toolbar-section-end">
+    <transition name="fade" appear mode="out-in">
+      <md-app md-mode="fixed">
+        <md-app-toolbar class="fixed-toolbar" elevation="5">
           <small>
-            <md-button class="md-icon-button" @click="showDialog = true">
-              <md-icon class="fa fa-envelope"></md-icon>
+            <md-button class="md-icon-button" @click="showNavigation = true">
+              <md-icon class="fa fa-bars"></md-icon>
             </md-button>
           </small>
-        </div>
-      </md-app-toolbar>
-      <md-app-drawer :md-active.sync="showNavigation" md-swipeable>
-        <md-toolbar class="md-transparent" md-elevation="0">
-          <span class="md-title md-accent">Contents Menu</span>
-        </md-toolbar>
+          <g-link exact to="/">
+            <md-button
+              class="md-title md-accent"
+              style="font-family: 'Oswald', sans-serif; padding-left: 10px;"
+            >
+              {{ $static.metaData.siteName }}
+            </md-button>
+          </g-link>
+          <div class="md-toolbar-section-end">
+            <small>
+              <md-button class="md-icon-button" @click="showDialog = true">
+                <md-icon class="fa fa-envelope"></md-icon>
+              </md-button>
+            </small>
+          </div>
+        </md-app-toolbar>
+        <md-app-drawer :md-active.sync="showNavigation" md-swipeable>
+          <md-toolbar class="md-transparent" md-elevation="0">
+            <span
+              class="md-title md-accent"
+              style="font-family: 'Oswald', sans-serif;"
+              >Contents Menu</span
+            >
+          </md-toolbar>
 
-        <md-list>
-          <md-list-item>
-            <md-icon class="fa fa-home"></md-icon>
-            <span class="md-list-item-text md-accent"
-              ><g-link class="nav__link" exact to="/">ホーム</g-link></span
+          <md-list>
+            <md-list-item>
+              <md-icon class="fa fa-home"></md-icon>
+              <span class="md-list-item-text md-accent"
+                ><g-link class="nav__link" exact to="/">ホーム</g-link></span
+              >
+            </md-list-item>
+            <md-list-item>
+              <md-icon class="fa fa-address-book"></md-icon>
+              <span class="md-list-item-text md-accent"
+                ><g-link class="nav__link" to="/about"
+                  >サイトについて</g-link
+                ></span
+              >
+            </md-list-item>
+            <md-list-item>
+              <md-icon class="fa fa-book"></md-icon>
+              <span class="md-list-item-text md-accent"
+                ><g-link class="nav__link" to="/blog">ブログ</g-link></span
+              >
+            </md-list-item>
+            <md-list-item>
+              <md-icon class="fa fa-twitter"></md-icon>
+              <span class="md-list-item-text md-accent"
+                ><a class="nav__link" :href="twitter_href" target="_blank"
+                  >Twitter</a
+                ></span
+              >
+            </md-list-item>
+            <md-list-item>
+              <md-icon class="fa fa-github"></md-icon>
+              <span class="md-list-item-text md-accent"
+                ><a class="nav__link" :href="github_href" target="_brank"
+                  >Github</a
+                ></span
+              >
+            </md-list-item>
+          </md-list>
+        </md-app-drawer>
+        <md-app-content style="padding: 0px;">
+          <ClientOnly>
+            <carousel
+              :per-page="1"
+              :navigate-to="1"
+              :loop="true"
+              :autoplay="true"
+              paginationColor="#abb1b5"
+              :autoplayTimeout="3000"
+              :adjustableHeight="true"
+              :paginationEnabled="false"
             >
-          </md-list-item>
-          <md-list-item>
-            <md-icon class="fa fa-address-book"></md-icon>
-            <span class="md-list-item-text md-accent"
-              ><g-link class="nav__link" to="/about"
-                >サイトについて</g-link
-              ></span
-            >
-          </md-list-item>
-          <md-list-item>
-            <md-icon class="fa fa-book"></md-icon>
-            <span class="md-list-item-text md-accent"
-              ><g-link class="nav__link" to="/blog">ブログ</g-link></span
-            >
-          </md-list-item>
-          <md-list-item>
-            <md-icon class="fa fa-twitter"></md-icon>
-            <span class="md-list-item-text md-accent"
-              ><a class="nav__link" :href="twitter_href" target="_blank"
-                >Twitter</a
-              ></span
-            >
-          </md-list-item>
-          <md-list-item>
-            <md-icon class="fa fa-github"></md-icon>
-            <span class="md-list-item-text md-accent"
-              ><a class="nav__link" :href="github_href" target="_brank"
-                >Github</a
-              ></span
-            >
-          </md-list-item>
-        </md-list>
-      </md-app-drawer>
-      <md-app-content style="padding: 0px;">
-        <ClientOnly>
-          <carousel
-            :per-page="1"
-            :navigate-to="1"
-            :loop="true"
-            :autoplay="true"
-            paginationColor="#abb1b5"
-            :autoplayTimeout="3000"
-            :adjustableHeight="true"
-            :paginationEnabled="false"
-          >
-            <slide>
-              <g-image
-                alt="top"
-                src="~/assets/images/top-chess.jpg"
-                height="500"
-                width="2000"
-                class="home-image"
-              />
-            </slide>
-            <slide>
-              <g-image
-                alt="top"
-                src="~/assets/images/3.jpg"
-                height="500"
-                width="2000"
-                class="home-image"
-              />
-            </slide>
-            <slide>
-              <g-image
-                alt="top"
-                src="~/assets/images/1.jpg"
-                height="500"
-                width="2000"
-                class="home-image"
-              />
-            </slide>
-            <slide>
-              <g-image
-                alt="top"
-                src="~/assets/images/2.jpg"
-                height="500"
-                width="2000"
-                class="home-image"
-              />
-            </slide>
-          </carousel>
-        </ClientOnly>
-        <div class="md-layout md-alignment-center">
-          <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
-            <md-dialog-title >
-              お問い合わせ
-            </md-dialog-title>
-            <form
-              name="contact"
-              method="post"
-              @submit.prevent="sendingMessage"
-              action="/success/"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p hidden>
-                <label> Don’t fill this out: <input name="bot-field" /> </label>
-              </p>
-              <div class="sender-info" style="padding: 1em">
-                <md-field :class="getValidationClass('name')">
-                  <label for="name" class="label">名前</label>
-                  <md-input
-                    name="name"
-                    id="name"
-                    autocomplete="given-name"
-                    v-model="form.name"
-                    :disabled="sending"
-                    class="md-accent"
-                  />
-                  <span
-                    class="md-error md-primary"
-                    v-if="!$v.form.name.required"
-                    >名前の入力は必須です</span
+              <slide>
+                <g-image
+                  alt="top"
+                  src="~/assets/images/top-chess.jpg"
+                  height="500"
+                  width="2000"
+                  class="home-image"
+                />
+              </slide>
+              <slide>
+                <g-image
+                  alt="top"
+                  src="~/assets/images/3.jpg"
+                  height="500"
+                  width="2000"
+                  class="home-image"
+                />
+              </slide>
+              <slide>
+                <g-image
+                  alt="top"
+                  src="~/assets/images/1.jpg"
+                  height="500"
+                  width="2000"
+                  class="home-image"
+                />
+              </slide>
+              <slide>
+                <g-image
+                  alt="top"
+                  src="~/assets/images/2.jpg"
+                  height="500"
+                  width="2000"
+                  class="home-image"
+                />
+              </slide>
+            </carousel>
+          </ClientOnly>
+          <div class="md-layout md-alignment-center">
+            <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
+              <md-dialog-title>
+                お問い合わせ
+              </md-dialog-title>
+              <form
+                name="contact"
+                method="post"
+                @submit.prevent="sendingMessage"
+                action="/success/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Don’t fill this out: <input name="bot-field" />
+                  </label>
+                </p>
+                <div class="sender-info" style="padding: 1em">
+                  <md-field :class="getValidationClass('name')">
+                    <label for="name" class="label">名前</label>
+                    <md-input
+                      name="name"
+                      id="name"
+                      autocomplete="given-name"
+                      v-model="form.name"
+                      :disabled="sending"
+                      class="md-accent"
+                    />
+                    <span
+                      class="md-error md-primary"
+                      v-if="!$v.form.name.required"
+                      >名前の入力は必須です</span
+                    >
+                    <span
+                      class="md-error md-primary"
+                      v-else-if="!$v.form.name.minlength"
+                      >名前は３文字以上で入力して下さい</span
+                    >
+                  </md-field>
+                  <md-field :class="getValidationClass('email')">
+                    <label for="email" class="label">メールアドレス</label>
+                    <md-input
+                      name="email"
+                      id="email"
+                      autocomplete="email"
+                      v-model="form.email"
+                      :disabled="sending"
+                      class="md-accent"
+                    />
+                    <span
+                      class="md-error md-primary"
+                      v-if="!$v.form.email.required"
+                      >メールアドレスは必須です。</span
+                    >
+                    <span
+                      class="md-error md-primary"
+                      v-else-if="!$v.form.name.email"
+                      >不正なメールアドレスです。再度ご確認ください</span
+                    >
+                  </md-field>
+                  <md-field :class="getValidationClass('message')">
+                    <label for="message">メッセージ</label>
+                    <md-textarea
+                      name="message"
+                      id="message"
+                      autocomplete="message"
+                      v-model="form.message"
+                      :disabled="sending"
+                      class="md-accent"
+                    />
+                    <span
+                      class="md-error md-primary"
+                      v-if="!$v.form.message.required"
+                      >メッセージは必須です。</span
+                    >
+                  </md-field>
+                  <md-button
+                    @click="showDialog = false"
+                    style="color: white; background-color: gray"
+                    >キャンセル</md-button
                   >
-                  <span
-                    class="md-error md-primary"
-                    v-else-if="!$v.form.name.minlength"
-                    >名前は３文字以上で入力して下さい</span
+                  <md-button
+                    type="submit"
+                    style="color: white; background-color: lightgreen"
+                    >メッセージを送る</md-button
                   >
-                </md-field>
-                <md-field :class="getValidationClass('email')">
-                  <label for="email" class="label">メールアドレス</label>
-                  <md-input
-                    name="email"
-                    id="email"
-                    autocomplete="email"
-                    v-model="form.email"
-                    :disabled="sending"
-                    class="md-accent"
-                  />
-                  <span
-                    class="md-error md-primary"
-                    v-if="!$v.form.email.required"
-                    >メールアドレスは必須です。</span
-                  >
-                  <span
-                    class="md-error md-primary"
-                    v-else-if="!$v.form.name.email"
-                    >不正なメールアドレスです。再度ご確認ください</span
-                  >
-                </md-field>
-                <md-field :class="getValidationClass('message')">
-                  <label for="message">メッセージ</label>
-                  <md-textarea
-                    name="message"
-                    id="message"
-                    autocomplete="message"
-                    v-model="form.message"
-                    :disabled="sending"
-                    class="md-accent"
-                  />
-                  <span
-                    class="md-error md-primary"
-                    v-if="!$v.form.message.required"
-                    >メッセージは必須です。</span
-                  >
-                </md-field>
-                <md-button
-                  @click="showDialog = false"
-                  style="color: white; background-color: gray"
-                  >キャンセル</md-button
-                >
-                <md-button
-                  type="submit"
-                  style="color: white; background-color: lightgreen"
-                  >メッセージを送る</md-button
-                >
-              </div>
-            </form>
-          </md-dialog>
-        </div>
-        <div class="slot">
-          <slot />
-        </div>
-        <Footer v-if="showFooter"></Footer>
-      </md-app-content>
-    </md-app>
+                </div>
+              </form>
+            </md-dialog>
+          </div>
+          <div class="slot">
+            <slot />
+          </div>
+          <Footer v-if="showFooter"></Footer>
+        </md-app-content>
+      </md-app>
+    </transition>
   </div>
 </template>
 
@@ -220,7 +231,6 @@ query {
   }
 }
 </static-query>
-
 
 <script>
 import Footer from "~/components/Footer.vue";
@@ -320,9 +330,20 @@ body {
   background: #eeeeee;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.8s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
 .md-app {
   max-height: 100vh;
-  border: 1px solid rgba(#000, .12);
+  border: 1px solid rgba(#000, 0.12);
 }
 
 .md-app-content {
