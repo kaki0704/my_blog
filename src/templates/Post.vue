@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <div v-html="$page.post.content"></div>
-    <vue-disqus shortname="everything-thriving" identifier="$page.post.id"></vue-disqus>
+    <vue-disqus shortname="everything-thriving" identifier="$page.post.id" url="https://everything-thriving.com/posts/$page.post.id"></vue-disqus>
   </Layout>
 </template>
 

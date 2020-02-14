@@ -9,40 +9,43 @@
       <md-card>
         <md-card-media>
           <md-ripple>
-            <g-link :to="edge.node.path"><g-image :src="edge.node.cover_image" style="width: 100%" fit="fill"/></g-link>
+            <g-link :to="edge.node.path"
+              ><g-image
+                :src="edge.node.cover_image"
+                style="width: 100%"
+                fit="fill"
+            /></g-link>
           </md-ripple>
         </md-card-media>
-        <md-card-header>
-          <div class="md-title">
-            {{ edge.node.title }}
-          </div>
-          <div class="md-subhead">
-            <p>
-              投稿日：{{ edge.node.date }}
-            </p>
-          </div>
-        </md-card-header>
-        <md-card-content>
-          {{ edge.node.except }}
-        </md-card-content>
-        <md-card-actions>
-          <g-link :to="edge.node.path"
-            ><md-button class="read-page">記事を読む >></md-button></g-link
-          >
-        </md-card-actions>
-        <md-card-actions>
-          カテゴリ：
-          <g-link
-            style="padding-right: .25em"
-            class="category"
-            v-for="tag in edge.node.tags"
-            :to="tag.path"
-            :key="tag.id"
-            ><p class="category-link">{{
-              tag.id
-            }}</p></g-link
-          >
-        </md-card-actions>
+        <div class="article-content">
+          <md-card-header>
+            <div class="md-title">
+              {{ edge.node.title }}
+            </div>
+            <div class="md-subhead">
+              <p>投稿日：{{ edge.node.date }}</p>
+            </div>
+          </md-card-header>
+          <md-card-content>
+            {{ edge.node.except }}
+          </md-card-content>
+          <md-card-actions>
+            <g-link :to="edge.node.path"
+              ><md-button class="read-page">記事を読む >></md-button></g-link
+            >
+          </md-card-actions>
+          <md-card-actions>
+            カテゴリ：
+            <g-link
+              style="padding-right: .25em"
+              class="category"
+              v-for="tag in edge.node.tags"
+              :to="tag.path"
+              :key="tag.id"
+              ><p class="category-link">{{ tag.id }}</p></g-link
+            >
+          </md-card-actions>
+        </div>
       </md-card>
     </article>
     <div class="pager">
@@ -115,5 +118,4 @@ p.category-link {
   font-family: "Noto Sans JP", sans-serif;
   color: #7f7fff;
 }
-
 </style>
