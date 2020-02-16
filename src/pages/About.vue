@@ -4,7 +4,7 @@
     <md-avatar class="md-large">
       <g-image src="~/assets/images/me.jpg" alt="me" />
     </md-avatar>
-    <p>{{ $static.metaData.siteDescription }}</p>
+    <p>{{ $static.metadata.siteDescription }}</p>
     <p class="md-headline">経歴</p>
     <p>
       1988年岐阜県生まれ。高校までは岐阜県内に住んでいたが、大学進学とともに福井県へ...
@@ -60,7 +60,7 @@
 
 <static-query>
 {
-  metaData {
+  metadata {
     siteDescription
   }
 }
@@ -72,7 +72,7 @@ export default {
     return {
       title: "About",
       meta: [
-        { name: "description", content: this.$static.metaData.siteDescription }
+        { name: "description", content: this.$static.metadata.siteDescription }
       ]
     };
   }

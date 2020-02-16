@@ -13,7 +13,7 @@
               class="md-title md-accent"
               style="font-family: 'Oswald', sans-serif; padding-left: 10px;"
             >
-              {{ $static.metaData.siteName }}
+              {{ $static.metadata.siteName }}
             </md-button>
           </g-link>
           <div class="md-toolbar-section-end">
@@ -226,7 +226,7 @@
 
 <static-query>
 query {
-  metaData {
+  metadata {
     siteName
   }
 }
