@@ -38,9 +38,7 @@ export default function(Vue, { router, head, isClient }) {
   head.script.push({
     type: "text/javascript",
     src: "https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.js",
-    body: true,
-    id: "snipcart",
-    "data-api-key": "YzRmODk3MjktNjY3Yi00MmU4LTlkMTItNmM3MWVhNTQwZGI3NjM3MTc1MDc5MTMyOTYwMDYw"
+    body: true
   });
   // Set default layout as a global component
   Vue.component("Layout", AltLayout);

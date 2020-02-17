@@ -1,6 +1,11 @@
 <template>
   <Layout>
     <h1>Products</h1>
+    <div
+      hidden
+      id="snipcart"
+      data-api-key="YzRmODk3MjktNjY3Yi00MmU4LTlkMTItNmM3MWVhNTQwZGI3NjM3MTc1MDc5MTMyOTYwMDYw"
+    ></div>
     <!-- <div
       style="text-align: center;"
       v-for="edge in $page.allContentfulProduct.edges"
