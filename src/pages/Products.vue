@@ -126,7 +126,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .pager {
   font-size: 1.5rem;
   letter-spacing: 0.5px;
