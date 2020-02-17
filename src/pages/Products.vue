@@ -1,17 +1,72 @@
 <template>
   <Layout>
     <h1>Products</h1>
-    <div  style="text-align: center;" v-for="edge in $page.allContentfulProduct.edges" :key="edge.node.id">
+    <!-- <div
+      style="text-align: center;"
+      v-for="edge in $page.allContentfulProduct.edges"
+      :key="edge.node.id"
+    >
       <h2 style="margin-bottom: 0.25em;">
         {{ edge.node.name }}
       </h2>
-      <span>{{ edge.node.price }}</span>
+      <button
+        class="snipcart-add-item cart-button"
+        :data-item-id="edge.node.id"
+        :data-item-name="edge.node.name"
+        :data-item-image="edge.node.image.file.url"
+        :data-item-price="edge.node.price"
+        :data-item-url="edge.node.path"
+      >
+        Buy for ${{ edge.node.price }}
+      </button>
       <g-image
         :src="edge.node.image.file.url"
         style="width: 100%; height: 300px; object-fit: contain;"
         :alt="edge.node.image.title"
       />
       <p>{{ edge.node.description }}</p>
+    </div> -->
+    <div
+      style="text-align: center;"
+      v-for="edge in $page.allContentfulProduct.edges"
+      :key="edge.node.id"
+    >
+      <div>
+        <md-card md-with-hover="true">
+          <md-card-area>
+            <md-card-media>
+              <g-image
+                :src="edge.node.image.file.url"
+                :alt="edge.node.image.title"
+                style="width: 100%; height: 200px; object-fit: inside;"
+              />
+            </md-card-media>
+
+            <md-card-header>
+              <div class="md-title">{{ edge.node.name }}</div>
+              <div class="md-subhead">¥ {{ edge.node.price }}</div>
+            </md-card-header>
+
+            <md-card-content>
+              {{ edge.node.description }}
+            </md-card-content>
+          </md-card-area>
+
+          <md-card-actions md-alignment="right">
+            <button
+              class="snipcart-add-item cart-button"
+              :data-item-id="edge.node.id"
+              :data-item-name="edge.node.name"
+              :data-item-image="edge.node.image.file.url"
+              :data-item-price="edge.node.price"
+              :data-item-url="edge.node.path"
+            >
+              カートに追加する
+            </button>
+          </md-card-actions>
+        </md-card>
+      </div>
+      <md-divider class="md-inset"></md-divider>
     </div>
     <Pager :info="$page.allContentfulProduct.pageInfo" linkClass="pager" />
   </Layout>
@@ -27,6 +82,7 @@ query ($page: Int) {
     edges {
       node {
         id
+        path
         name
         price
         description
@@ -66,12 +122,30 @@ export default {
 </script>
 
 <style>
-  .pager {
-    font-size: 1.5rem;
-    letter-spacing: 0.5px;
-    color: black;
-    padding: 8px 16px;
-    float: left;
-    margin-bottom: 20px;
-  }
+.pager {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  color: black;
+  padding: 8px 16px;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.md-card {
+  width: 320px;
+  margin: 4px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.cart-button {
+  background-color: forestgreen;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+}
 </style>

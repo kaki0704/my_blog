@@ -37,7 +37,8 @@ module.exports = {
   ],
   templates: {
     Post: "/posts/:id",
-    Tag: "/tags/:id"
+    Tag: "/tags/:id",
+    ContentfulProduct: "/products/:id"
   },
   transformers: {
     //Add markdown support to all file-system sources
