@@ -1,43 +1,14 @@
 <template>
   <Layout>
     <h1>Products</h1>
-    <div
-      hidden
-      id="snipcart"
-      data-api-key="YzRmODk3MjktNjY3Yi00MmU4LTlkMTItNmM3MWVhNTQwZGI3NjM3MTc1MDc5MTMyOTYwMDYw"
-    ></div>
-    <!-- <div
-      style="text-align: center;"
-      v-for="edge in $page.allContentfulProduct.edges"
-      :key="edge.node.id"
-    >
-      <h2 style="margin-bottom: 0.25em;">
-        {{ edge.node.name }}
-      </h2>
-      <button
-        class="snipcart-add-item cart-button"
-        :data-item-id="edge.node.id"
-        :data-item-name="edge.node.name"
-        :data-item-image="edge.node.image.file.url"
-        :data-item-price="edge.node.price"
-        :data-item-url="edge.node.path"
-      >
-        Buy for ${{ edge.node.price }}
-      </button>
-      <g-image
-        :src="edge.node.image.file.url"
-        style="width: 100%; height: 300px; object-fit: contain;"
-        :alt="edge.node.image.title"
-      />
-      <p>{{ edge.node.description }}</p>
-    </div> -->
+
     <div
       style="text-align: center;"
       v-for="edge in $page.allContentfulProduct.edges"
       :key="edge.node.id"
     >
       <div>
-        <md-card md-with-hover="true">
+        <md-card>
           <md-card-area>
             <md-card-media>
               <g-image
@@ -120,6 +91,15 @@ export default {
       {
         name: "keywords",
         contetn: "Premium Jackets , High-End Clothing, Designer Sunglasses"
+      }
+    ],
+    script: [
+      {
+        src: "https://cdn.snipcart.com/themes/v3.0.8/default/snipcart.js",
+        body: true,
+        id: "snipcart",
+        "data-api-key":
+          "YzRmODk3MjktNjY3Yi00MmU4LTlkMTItNmM3MWVhNTQwZGI3NjM3MTc1MDc5MTMyOTYwMDYw"
       }
     ]
   }

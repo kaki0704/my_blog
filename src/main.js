@@ -34,12 +34,6 @@ export default function(Vue, { router, head, isClient }) {
     rel: "stylesheet",
     href: "https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.css"
   });
-
-  head.script.push({
-    type: "text/javascript",
-    src: "https://cdn.snipcart.com/themes/v3.0.7/default/snipcart.js",
-    body: true
-  });
   // Set default layout as a global component
   Vue.component("Layout", AltLayout);
   Vue.use(VueDisqus);
