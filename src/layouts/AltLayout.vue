@@ -49,9 +49,15 @@
               >
             </md-list-item>
             <md-list-item>
-              <md-icon class="fa fa-book"></md-icon>
+              <md-icon class="fa fa-file"></md-icon>
               <span class="md-list-item-text md-accent"
                 ><g-link class="nav__link" to="/blog">ブログ</g-link></span
+              >
+            </md-list-item>
+            <md-list-item>
+              <md-icon class="fa fa-book"></md-icon>
+              <span class="md-list-item-text md-accent"
+                ><g-link class="nav__link" to="/books">本</g-link></span
               >
             </md-list-item>
             <md-list-item>
