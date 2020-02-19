@@ -55,12 +55,6 @@
               >
             </md-list-item>
             <md-list-item>
-              <md-icon class="fa fa-book"></md-icon>
-              <span class="md-list-item-text md-accent"
-                ><g-link class="nav__link" to="/books">本</g-link></span
-              >
-            </md-list-item>
-            <md-list-item>
               <md-icon class="fa fa-twitter"></md-icon>
               <span class="md-list-item-text md-accent"
                 ><a class="nav__link" :href="twitter_href" target="_blank"
