@@ -73,55 +73,11 @@
           </md-list>
         </md-app-drawer>
         <md-app-content style="padding: 0px;">
-          <ClientOnly>
-            <carousel
-              :per-page="1"
-              :navigate-to="1"
-              :loop="true"
-              :autoplay="true"
-              paginationColor="#abb1b5"
-              :autoplayTimeout="3000"
-              :adjustableHeight="true"
-              :paginationEnabled="false"
-            >
-              <slide>
-                <g-image
-                  alt="top"
-                  src="~/assets/images/top-chess.jpg"
-                  height="500"
-                  width="2000"
-                  class="home-image"
-                />
-              </slide>
-              <slide>
-                <g-image
-                  alt="top"
-                  src="~/assets/images/3.jpg"
-                  height="500"
-                  width="2000"
-                  class="home-image"
-                />
-              </slide>
-              <slide>
-                <g-image
-                  alt="top"
-                  src="~/assets/images/1.jpg"
-                  height="500"
-                  width="2000"
-                  class="home-image"
-                />
-              </slide>
-              <slide>
-                <g-image
-                  alt="top"
-                  src="~/assets/images/2.jpg"
-                  height="500"
-                  width="2000"
-                  class="home-image"
-                />
-              </slide>
-            </carousel>
-          </ClientOnly>
+          <div class="video-content">
+            <video loop muted="true" autoplay playsinline id="video-background">
+              <source src="../assets/images/nature.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div class="md-layout md-alignment-center">
             <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
               <md-dialog-title>
@@ -319,6 +275,15 @@ export default {
 </script>
 
 <style>
+.video-content {
+  width: 100%;
+  height: 40%;
+  overflow:hidden;
+}
+
+#video-background {
+  width: 100%;
+}
 body {
   font-family: "Noto Sans JP", sans-serif;
   margin: 0;
