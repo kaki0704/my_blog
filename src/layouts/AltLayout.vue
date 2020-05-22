@@ -155,7 +155,7 @@
                     <span
                       class="md-error md-primary"
                       v-if="!$v.form.name.required"
-                      >名前の入力は必須です</span
+                      >氏名の入力は必須です</span
                     >
                     <span
                       class="md-error md-primary"
