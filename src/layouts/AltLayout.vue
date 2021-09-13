@@ -81,7 +81,6 @@
               :autoplay="true"
               paginationColor="#abb1b5"
               :autoplayTimeout="3000"
-              :adjustableHeight="true"
               :paginationEnabled="false"
             >
               <slide>
@@ -89,7 +88,6 @@
                   alt="top"
                   src="~/assets/images/top-chess.jpg"
                   height="500"
-                  width="2000"
                   class="home-image"
                 />
               </slide>
@@ -98,7 +96,6 @@
                   alt="top"
                   src="~/assets/images/3.jpg"
                   height="500"
-                  width="2000"
                   class="home-image"
                 />
               </slide>
@@ -107,7 +104,6 @@
                   alt="top"
                   src="~/assets/images/1.jpg"
                   height="500"
-                  width="2000"
                   class="home-image"
                 />
               </slide>
@@ -116,14 +112,16 @@
                   alt="top"
                   src="~/assets/images/2.jpg"
                   height="500"
-                  width="2000"
                   class="home-image"
                 />
               </slide>
             </carousel>
           </ClientOnly>
-          <div class="md-layout md-alignment-center">
-            <md-dialog :md-active.sync="showDialog" style="max-height: 85%">
+          <div class="slot">
+            <slot />
+          </div>
+          <div>
+            <md-dialog :md-active.sync="showDialog">
               <md-dialog-title>
                 お問い合わせ
               </md-dialog-title>
@@ -141,7 +139,7 @@
                     Don’t fill this out: <input name="bot-field" />
                   </label>
                 </p>
-                <div class="sender-info" style="padding: 1em">
+                <div class="sender-info">
                   <md-field :class="getValidationClass('name')">
                     <label for="name" class="label">名前</label>
                     <md-input
@@ -214,9 +212,6 @@
               </form>
             </md-dialog>
           </div>
-          <div class="slot">
-            <slot />
-          </div>
           <Footer v-if="showFooter"></Footer>
         </md-app-content>
       </md-app>
@@ -233,14 +228,9 @@ query {
 </static-query>
 
 <script>
-import Footer from "~/components/Footer.vue";
-import { validationMixin } from "vuelidate";
-import {
-  required,
-  email,
-  minLength,
-  maxLength
-} from "vuelidate/lib/validators";
+import Footer from "~/components/Footer.vue"
+import { validationMixin } from "vuelidate"
+import { required, email, minLength, maxLength } from "vuelidate/lib/validators"
 export default {
   mixins: [validationMixin],
   data: () => ({
@@ -252,70 +242,70 @@ export default {
     form: {
       name: "",
       email: "",
-      message: ""
-    }
+      message: "",
+    },
   }),
   components: {
     Footer,
     Carousel: () =>
       import("vue-carousel")
-        .then(m => m.Carousel)
+        .then((m) => m.Carousel)
         .catch(),
     Slide: () =>
       import("vue-carousel")
-        .then(m => m.Slide)
-        .catch()
+        .then((m) => m.Slide)
+        .catch(),
   },
   props: ["showFooter"],
   validations: {
     form: {
       name: {
         required,
-        minLength: minLength(3)
+        minLength: minLength(3),
       },
       message: {
-        required
+        required,
       },
       email: {
         required,
-        email
-      }
-    }
+        email,
+      },
+    },
   },
   methods: {
     getValidationClass(fieldName) {
-      const field = this.$v.form[fieldName];
+      const field = this.$v.form[fieldName]
       if (field) {
         return {
-          "md-invalid": field.$invalid && field.$dirty
-        };
+          "md-invalid": field.$invalid && field.$dirty,
+        }
       }
     },
     sendingMessage(e) {
-      this.$v.$touch();
+      this.$v.$touch()
       if (!this.$v.$invalid) {
-        this.sending = true;
+        this.sending = true
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
             "form-name": e.target.getAttribute("name"),
-            ...this.form
-          })
+            ...this.form,
+          }),
         })
           .then(() => this.$router.push("/success"))
-          .catch(error => alert(error));
+          .catch((error) => alert(error))
       }
     },
     encode(data) {
       return Object.keys(data)
         .map(
-          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
         )
-        .join("&");
-    }
-  }
-};
+        .join("&")
+    },
+  },
+}
 </script>
 
 <style>
@@ -378,6 +368,10 @@ body {
 
 .md-primary {
   color: #f66;
+}
+
+.md-dialog {
+  width: auto;
 }
 
 .nav__link {
