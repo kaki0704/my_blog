@@ -120,8 +120,8 @@
           <div class="slot">
             <slot />
           </div>
-          <div>
-            <md-dialog :md-active.sync="showDialog">
+          <md-dialog :md-active.sync="showDialog">
+            <div class="dialog-content">
               <md-dialog-title>
                 お問い合わせ
               </md-dialog-title>
@@ -210,8 +210,8 @@
                   >
                 </div>
               </form>
-            </md-dialog>
-          </div>
+            </div>
+          </md-dialog>
           <Footer v-if="showFooter"></Footer>
         </md-app-content>
       </md-app>
@@ -370,10 +370,6 @@ body {
   color: #f66;
 }
 
-.md-dialog {
-  width: auto;
-}
-
 .nav__link {
   color: #fff;
 }
@@ -408,23 +404,16 @@ code {
   padding: -500%;
 }
 
-.md-dialog {
-  background-color: #2c2c2c;
-  color: #eeeeee;
-  width: 40%;
-}
-
-.md-dialog-title {
-  background-color: #2c2c2c;
-  color: white;
-  text-align: center;
-}
-
 .submit-button {
   margin-bottom: 20px;
 }
 
 .md-field:after {
   background-color: darkgray;
+}
+
+.dialog-content {
+  background-color: #2c2c2c;
+  padding: 20px 10px;
 }
 </style>
