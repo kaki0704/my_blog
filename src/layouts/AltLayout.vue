@@ -107,14 +107,6 @@
                   class="home-image"
                 />
               </slide>
-              <slide>
-                <g-image
-                  alt="top"
-                  src="~/assets/images/2.jpg"
-                  height="500"
-                  class="home-image"
-                />
-              </slide>
             </carousel>
           </ClientOnly>
           <div class="slot">

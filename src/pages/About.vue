@@ -16,7 +16,7 @@
       何かスキルを身につけたいと思い、郵便局を退職し、地元の製造メーカーに人生初の転職を経験し、
     </p>
     <p>
-      プログラミングに触れ、一生の仕事にしていきたいと決意。web系のシステム会社に二度目の転職。
+      プログラミングに触れ、一生の仕事にしていきたいと決意。
     </p>
     <p>
       現在は岐阜でエンジニアとしてリモートワークで働いています。
@@ -27,10 +27,16 @@
         Ruby, Ruby on Rails
       </li>
       <li>
+        Golang
+      </li>
+      <li>
+        Flutter
+      </li>
+      <li>
         Javascript, Vue.js, Nuxt.js
       </li>
       <li>
-        typescript, Angular
+        typescript, React, Next.js
       </li>
     </ul>
     <div class="sns" style="margin-top: 20px; margin-botttom: 30px;">

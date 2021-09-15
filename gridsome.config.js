@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Everything Thriving",
+  siteName: "Carpe diem",
   siteDescription:
     "岐阜に住んでいるエンジニアがプログラミングなどについて発信していくサイトです。",
   icon: "./src/assets/images/favicon.png",

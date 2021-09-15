@@ -2,14 +2,14 @@
   <Layout :showFooter="true">
     <div class="message title-message"  style="margin-bottom: 100px;">
       <h2 class="main-title md-display-1" style="font-weight: bold;">
-        Everything thriving
+        Carpe diem
       </h2>
 
       <p>
-        大吉大利 - ずっと幸せであるように -
+        - Carpe diem -
       </p>
       <p>
-        みんなが幸せで良いことで溢れるように、仕事や趣味に取り組んでいます。
+        一日一日その瞬間を楽しむように、仕事や趣味に取り組んでいます。
       </p>
       <p>
         プログラミングをやりたいのにどうしたらいいかわからない、
@@ -86,7 +86,7 @@
         仕事ではRuby, Ruby on Railsを使用しています。
       </p>
       <p style="margin-bottom: 100px">
-        このサイトの制作にはVueとGraphQLを使用しました。あと、Angularは勉強中です。
+        このサイトの制作にはVue(Gridsome)とGraphQLを使用しました。
       </p>
       <ClientOnly>
         <carousel
@@ -122,16 +122,6 @@
           </slide>
           <slide>
             <g-image
-              alt="reading"
-              src="~/assets/images/skill/angular.png"
-              quality="100"
-              height="430"
-              width="1500"
-              fit="inside"
-            />
-          </slide>
-          <slide>
-            <g-image
               alt="graphql"
               src="~/assets/images/skill/graphql.png"
               quality="100"
@@ -153,8 +143,6 @@ import { validationMixin } from "vuelidate";
 import {
   required,
   email,
-  minLength,
-  maxLength
 } from "vuelidate/lib/validators";
 export default {
   mixins: [validationMixin],
