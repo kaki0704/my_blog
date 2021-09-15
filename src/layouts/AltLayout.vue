@@ -227,7 +227,7 @@ export default {
   mixins: [validationMixin],
   data: () => ({
     twitter_href: "https://twitter.com/kaki_0704",
-    github_href: "https://github.com/yamady0704",
+    github_href: "https://github.com/kaki0704",
     showNavigation: false,
     showDialog: false,
     sending: false,
